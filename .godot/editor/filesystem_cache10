@@ -1,3 +1,8 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778143518
-icon.svg::CompressedTexture2D::603034615184010769::1778143512::1778143518::1::::<><><>0<>0<>fa5f4e62389e3505b70d20a27f1bc48f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://::1778152892
+::res://assets/::1778152892
+icon.svg::CompressedTexture2D::603034615184010769::1778143512::1778151869::1::::<><><>0<>0<>b8fbca28654e98aa2e08bbc071e4d01a<>res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex::
+::res://assets/characters/::1778152892
+player.tscn::PackedScene::1153093929263298908::1778152582::0::1::::<><><>0<>0<><>::
+::res://assets/levels/::1778152853
+main_scene.tscn::PackedScene::4906135808239707925::1778152892::0::1::::<><><>0<>0<><>::uid://qotj2tagmijk::::res://assets/characters/player.tscn
