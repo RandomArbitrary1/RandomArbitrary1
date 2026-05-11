@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qotj2tagmijk"]
 
 [ext_resource type="Script" uid="uid://b5pge1x1t7ar8" path="res://assets/entities/main_character/player.gd" id="1_hwog1"]
+[ext_resource type="AudioStream" uid="uid://bqdr6tipx65d3" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
 [ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
@@ -30,9 +31,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608369, 1.1526634, 2.18278
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18665898, 0.6754699, 1.3875456)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1996457104]
+omni_range = 5.9939713
 
 [node name="sounds" type="Node" parent="." unique_id=657052960]
 
 [node name="dodge" type="AudioStreamPlayer" parent="sounds" unique_id=629439217]
 stream = ExtResource("3_dxsce")
+bus = &"Sounds"
+
+[node name="attack" type="AudioStreamPlayer" parent="sounds" unique_id=246782063]
+stream = ExtResource("3_c7nud")
+volume_db = -14.596
 bus = &"Sounds"

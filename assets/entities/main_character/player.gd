@@ -13,6 +13,8 @@ var Invincibility = 0
 @onready var camera_arm = $CameraPivot/CameraArm
 @onready var hud_hp = $"../CanvasLayer/Hud/HP"
 @onready var dodge_sfx = $sounds/dodge
+@onready var attack_sfx: AudioStreamPlayer = $sounds/attack
+
 
 
 func _ready():
@@ -26,13 +28,9 @@ func _unhandled_input(event):
 		deg_to_rad(min_pitch),
 		deg_to_rad(max_pitch))
 	if Input.is_action_just_pressed("dodge"):
-		Invincibility = 1
-		var input_dir := Input.get_vector("left", "right", "up", "down")
-		var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, camera_pivot.rotation.y).normalized()
-		var horizontal_velocity = direction * SPEED * 4
-		velocity.x = horizontal_velocity.x
-		velocity.z = horizontal_velocity.z
-		dodge_sfx.play()
+		dodge()
+	if Input.is_action_just_pressed("attack"):
+		attack()
 		
 func _process(_delta):
 	camera_pivot.rotation.x = camera_rotation.x  # Pitch
@@ -62,3 +60,15 @@ func _physics_process(delta: float) -> void:
 	velocity.z = horizontal_velocity.z
 
 	move_and_slide()
+	
+func attack():
+	attack_sfx.play()
+	
+func dodge():
+	Invincibility = 1
+	var input_dir := Input.get_vector("left", "right", "up", "down")
+	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, camera_pivot.rotation.y).normalized()
+	var horizontal_velocity = direction * SPEED * 3
+	velocity.x = horizontal_velocity.x
+	velocity.z = horizontal_velocity.z
+	dodge_sfx.play()

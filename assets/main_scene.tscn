@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qotj2tagmijk" path="res://assets/entities/main_character/player.tscn" id="1_ob7y1"]
 [ext_resource type="PackedScene" uid="uid://b2dfqinja0qn2" path="res://assets/ui/health.tscn" id="2_ivrm4"]
+[ext_resource type="Texture2D" uid="uid://b2edfbky4ia87" path="res://assets/levels/car texture3.jpg" id="3_p2g8j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(0.011388169, 0.15533149, 0.28523183, 1)
@@ -20,6 +21,7 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivrm4"]
 albedo_color = Color(0.17092276, 0.45090234, 3.85046e-07, 1)
+albedo_texture = ExtResource("3_p2g8j")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p2g8j"]
 
