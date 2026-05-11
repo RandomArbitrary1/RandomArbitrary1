@@ -1,8 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778153966
-icon.svg::CompressedTexture2D::603034615184010769::1774345225::1778153966::1::::<><><>0<>0<>fa5f4e62389e3505b70d20a27f1bc48f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1778153966
-main_scene.tscn::PackedScene::4906135808239707925::1778153959::0::1::::<><><>0<>0<><>::uid://qotj2tagmijk::::res://assets/characters/player.tscn
+::res://::1778484592
+icon.svg::CompressedTexture2D::603034615184010769::1778484534::1778484571::1::::<><><>0<>0<>fa5f4e62389e3505b70d20a27f1bc48f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+old_icon.svg::CompressedTexture2D::6880763056096471128::1774345225::1778484571::1::::<><><>0<>0<>12792ae6194cf902aee767db35d155ee<>res://.godot/imported/old_icon.svg-405b1294d87d67ceae80b10d0ad0326b.ctex::
+::res://assets/::1778484574
+main_scene.tscn::PackedScene::4906135808239707925::1778484574::0::1::::<><><>0<>0<><>::uid://qotj2tagmijk::::res://assets/characters/player.tscn
 ::res://assets/characters/::1778153075
 player.tscn::PackedScene::1153093929263298908::1778153075::0::1::::<><><>0<>0<><>::
-::res://assets/levels/::1778153959
+::res://assets/levels/::1778153972
