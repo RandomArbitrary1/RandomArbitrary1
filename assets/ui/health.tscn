@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b2dfqinja0qn2"]
+
+[node name="Hud" type="Node2D" unique_id=2090949931]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=200736574]
+offset_left = 12.585503
+offset_top = 15.5950775
+offset_right = 479.98633
+offset_bottom = 159.45009
+text = "Health = Null sigma ligma
+"

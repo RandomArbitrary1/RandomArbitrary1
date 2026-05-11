@@ -1,3 +1,6 @@
+CanvasLayer
+AudioStreamPlayer3D
+Node
 MeshInstance3D
 SpringArm3D
 CollisionShape3D

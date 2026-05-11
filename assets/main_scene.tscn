@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cb5tltabg15vd"]
 
 [ext_resource type="PackedScene" uid="uid://qotj2tagmijk" path="res://assets/entities/main_character/player.tscn" id="1_ob7y1"]
+[ext_resource type="PackedScene" uid="uid://b2dfqinja0qn2" path="res://assets/ui/health.tscn" id="2_ivrm4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(0.14090696, 0.5179994, 0.73561186, 1)
@@ -44,18 +45,22 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [node name="World" type="Node3D" unique_id=1406768218]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=273672719]
+
+[node name="Hud" parent="CanvasLayer" unique_id=2090949931 instance=ExtResource("2_ivrm4")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1102092192]
 environment = SubResource("Environment_p2g8j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=460999125]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 16.2913, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1314012681 instance=ExtResource("1_ob7y1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076886654, 4.473858, 0.02132845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076886654, 1.4203556, 0.02132845)
 
 [node name="donut" type="MeshInstance3D" parent="." unique_id=1626947363]
-transform = Transform3D(12.04, 0, 0, 0, 12.04, 0, 0, 0, 12.04, -8.028445, -2.3645582, 0)
+transform = Transform3D(12.04, 0, 0, 0, 12.04, 0, 0, 0, 12.04, -18.304403, -2.3645582, 0)
 material_override = SubResource("StandardMaterial3D_ob7y1")
 mesh = SubResource("TorusMesh_ivrm4")
 
@@ -74,7 +79,7 @@ shape = SubResource("ConvexPolygonShape3D_p2g8j")
 shape = SubResource("ConvexPolygonShape3D_n5yp7")
 
 [node name="grass plane" type="MeshInstance3D" parent="." unique_id=2034678575]
-transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, 13.175305, 0.19070697, 0)
+transform = Transform3D(32, 0, 0, 0, 32, 0, 0, 0, 32, -4.502549, 0.19070697, 0)
 material_override = SubResource("StandardMaterial3D_ivrm4")
 mesh = SubResource("PlaneMesh_p2g8j")
 
