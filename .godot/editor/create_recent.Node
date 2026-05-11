@@ -1,5 +1,10 @@
-CanvasLayer
+AudioStreamPlayer
 AudioStreamPlayer3D
+OmniLight3D
+Label
+VBoxContainer
+MarginContainer
+CanvasLayer
 Node
 MeshInstance3D
 SpringArm3D

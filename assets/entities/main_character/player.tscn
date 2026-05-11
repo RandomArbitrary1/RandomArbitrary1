@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://qotj2tagmijk"]
 
 [ext_resource type="Script" uid="uid://b5pge1x1t7ar8" path="res://assets/entities/main_character/player.gd" id="1_hwog1"]
-[ext_resource type="AudioStream" uid="uid://befi7a0xwl4ax" path="res://assets/sfx/step.mp3" id="2_4ufk5"]
+[ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwog1"]
-metallic = 0.4
-roughness = 0.11
+metallic = 1.0
+roughness = 0.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
@@ -29,8 +29,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608369, 1.1526634, 2.18278
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/CameraArm" unique_id=451734283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18665898, 0.6754699, 1.3875456)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1996457104]
+
 [node name="sounds" type="Node" parent="." unique_id=657052960]
 
-[node name="step" type="AudioStreamPlayer3D" parent="sounds" unique_id=1772775622]
-stream = ExtResource("2_4ufk5")
+[node name="dodge" type="AudioStreamPlayer" parent="sounds" unique_id=629439217]
+stream = ExtResource("3_dxsce")
 bus = &"Sounds"

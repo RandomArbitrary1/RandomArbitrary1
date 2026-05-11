@@ -2,10 +2,14 @@
 
 [node name="Hud" type="Node2D" unique_id=2090949931]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=200736574]
-offset_left = 12.585503
-offset_top = 15.5950775
-offset_right = 479.98633
-offset_bottom = 159.45009
-text = "Health = Null sigma ligma
-"
+[node name="hplabel" type="Label" parent="." unique_id=1320544406]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "Health = "
+
+[node name="HP" type="Label" parent="." unique_id=1299257527]
+offset_left = 224.0
+offset_right = 264.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
