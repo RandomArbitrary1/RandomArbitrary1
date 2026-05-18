@@ -1,4 +1,5 @@
 CollisionShape3D
+Area3D
 MeshInstance3D
 CharacterBody3D
 AudioStreamPlayer
@@ -11,4 +12,3 @@ MarginContainer
 CanvasLayer
 SpringArm3D
 Camera3D
-Node3D

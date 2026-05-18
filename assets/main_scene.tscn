@@ -34,6 +34,11 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p2g8j"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_n5yp7"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wrj0a"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
 [node name="World" type="Node3D" unique_id=1406768218]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=273672719]
@@ -71,3 +76,12 @@ shape = SubResource("ConcavePolygonShape3D_p2g8j")
 
 [node name="Enemy" parent="." unique_id=19971874 instance=ExtResource("4_n5yp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2448359, 2.1907072, -10.638524)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=487256758]
+transform = Transform3D(0.235, 0, 0, 0, 2.8, 0, 0, 0, 3.41, -11.40716, 1.5864954, -4.3953342)
+mesh = SubResource("BoxMesh_n5yp7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=729485079]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=2032339294]
+shape = SubResource("ConcavePolygonShape3D_wrj0a")

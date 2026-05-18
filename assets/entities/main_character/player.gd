@@ -9,13 +9,12 @@ var SENSITIVITY = 0.003
 var camera_rotation = Vector2.ZERO
 var HEALTH = 100
 var Invincibility = 0
+var Attack_hurt_time = 0
 @onready var camera_pivot = $CameraPivot
 @onready var camera_arm = $CameraPivot/CameraArm
 @onready var hud_hp = $"../CanvasLayer/Hud/HP"
 @onready var dodge_sfx = $sounds/dodge
 @onready var attack_sfx: AudioStreamPlayer = $sounds/attack
-
-
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -35,21 +34,16 @@ func _unhandled_input(event):
 func _process(_delta):
 	camera_pivot.rotation.x = camera_rotation.x  # Pitch
 	camera_pivot.rotation.y = camera_rotation.y  # Yaw
-	hud_hp.text = str(Invincibility)
+	hud_hp.text = str(Attack_hurt_time)
 	if Invincibility > 0.0:
 		Invincibility -= _delta
+	if Attack_hurt_time > 0.0:
+		Attack_hurt_time -= _delta
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+		velocity += get_gravity() * 2 * delta
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var cam_y_rotation = camera_pivot.rotation.y
 	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, cam_y_rotation).normalized()
@@ -63,12 +57,13 @@ func _physics_process(delta: float) -> void:
 	
 func attack():
 	attack_sfx.play()
+	Attack_hurt_time = 0.8
 	
 func dodge():
-	Invincibility = 1
+	Invincibility = 1.0
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, camera_pivot.rotation.y).normalized()
-	var horizontal_velocity = direction * SPEED * 3
+	var horizontal_velocity = direction * SPEED * 2
 	velocity.x = horizontal_velocity.x
 	velocity.z = horizontal_velocity.z
 	dodge_sfx.play()
