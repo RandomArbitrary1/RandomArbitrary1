@@ -50,5 +50,4 @@ bus = &"Sounds"
 [node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
 stream = ExtResource("4_c7nud")
 volume_db = -18.467
-pitch_scale = 0.01
 parameters/looping = true
