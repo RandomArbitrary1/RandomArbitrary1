@@ -1,5 +1,4 @@
 res://default_bus_layout.tres
-res://assets/ui/health.tscn
-res://assets/entities/main_character/player.gd
-res://assets/main_scene.tscn
 res://assets/entities/main_character/player.tscn
+res://assets/main_scene.tscn
+res://assets/entities/enemies/enemy.tscn
