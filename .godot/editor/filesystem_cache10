@@ -1,16 +1,21 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1779088506
+::res://::1779095992
 default_bus_layout.tres::AudioBusLayout::237640572514002952::1779088506::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::603034615184010769::1778484534::1778484571::1::::<><><>0<>0<>fa5f4e62389e3505b70d20a27f1bc48f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://assets/::1779089399
-main_scene.tscn::PackedScene::4906135808239707925::1778502095::0::1::::<><><>0<>0<><>::uid://qotj2tagmijk::::res://assets/entities/main_character/player.tscn<>uid://b2dfqinja0qn2::::res://assets/ui/health.tscn<>uid://b2edfbky4ia87::::res://assets/levels/car texture3.jpg
-::res://assets/entities/::1778486028
-::res://assets/entities/main_character/::1778502095
-player.gd::GDScript::4523424506622762643::1778502095::0::1::::<>CharacterBody3D<><>0<>0<><>::
-player.tscn::PackedScene::1153093929263298908::1778501923::0::1::::<><><>0<>0<><>::uid://b5pge1x1t7ar8::::res://assets/entities/main_character/player.gd<>uid://bqdr6tipx65d3::::res://assets/sfx/attack.mp3<>uid://cvoyjb8kxuuho::::res://assets/sfx/jump.mp3
+::res://assets/::1779094571
+main_scene.tscn::PackedScene::4906135808239707925::1779094571::0::1::::<><><>0<>0<><>::uid://qotj2tagmijk::::res://assets/entities/main_character/player.tscn<>uid://b2dfqinja0qn2::::res://assets/ui/health.tscn<>uid://b2edfbky4ia87::::res://assets/levels/car texture3.jpg<>uid://cqs241tew4vs2::::res://assets/entities/enemies/enemy.tscn
+::res://assets/entities/::1779089783
+::res://assets/entities/enemies/::1779095713
+enemy.gd::GDScript::6505221910379677100::1779094199::0::1::::<>CharacterBody3D<><>0<>0<><>::
+enemy.tscn::PackedScene::5934714207166426203::1779095713::0::1::::<><><>0<>0<><>::uid://cyxgb36w8kf61::::res://assets/entities/enemies/enemy.gd
+::res://assets/entities/main_character/::1779095976
+knight.glb::PackedScene::3552174765941855844::1779095976::1779095993::1::::<><><>0<>0<>57ecfa72bf26f658642efe253ac0edec<>res://.godot/imported/knight.glb-bfe32615145d0696ac404ca6b15a7b8d.scn::uid://cdq6mg727apmh::::res://assets/entities/main_character/knight_sonic-robo-blast-2-v22-32x.png
+player.gd::GDScript::4523424506622762643::1779094887::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.tscn::PackedScene::1153093929263298908::1779095359::0::1::::<><><>0<>0<><>::uid://b5pge1x1t7ar8::::res://assets/entities/main_character/player.gd<>uid://bqdr6tipx65d3::::res://assets/sfx/attack.mp3<>uid://cvoyjb8kxuuho::::res://assets/sfx/jump.mp3<>uid://b2nw1jhc04ktf::::res://assets/music/Q367 Medieval Boss Fight 5.mp3
+knight_sonic-robo-blast-2-v22-32x.png::CompressedTexture2D::5018341964511253947::1779095992::1779095993::1::::<><><>0<>0<>cbc1032639cb10fd79b62af9b0a2f2ee<>res://.godot/imported/knight_sonic-robo-blast-2-v22-32x.png-f96ee4e15f84c13fe0293822fec5b57c.s3tc.ctex::
 ::res://assets/levels/::1778502041
 car texture3.jpg::CompressedTexture2D::4289968121984952210::1765747744::1778502041::1::::<><><>0<>0<>a475420ab41cfaef6bf172e0bef03d9e<>res://.godot/imported/car texture3.jpg-b0adc97b5c59ca4f6bc2bbfe15dca01a.s3tc.ctex::
-::res://assets/music/::1779089401
+::res://assets/music/::1779089408
 Q367 Medieval Boss Fight 5.mp3::AudioStreamMP3::4309739060854355499::1779089366::1779089408::1::::<><><>0<>0<>ea23cd3b83587ea5ef38c77e419a3a23<>res://.godot/imported/Q367 Medieval Boss Fight 5.mp3-c285b6768bca11070f22b68094868259.mp3str::
 ::res://assets/sfx/::1778501835
 attack.mp3::AudioStreamMP3::3516723874667488578::1778501819::1778501835::1::::<><><>0<>0<>f2197b8d4f9057b2044070399fc3deaf<>res://.godot/imported/attack.mp3-771e28885f1176399c07b27d45eb23f0.mp3str::
