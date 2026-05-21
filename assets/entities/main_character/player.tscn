@@ -40,7 +40,6 @@ bus = &"Sounds"
 [node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
 stream = ExtResource("4_c7nud")
 volume_db = -18.467
-autoplay = true
 parameters/looping = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]
