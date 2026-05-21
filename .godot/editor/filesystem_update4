@@ -1,3 +1,6 @@
 res://default_bus_layout.tres
 res://assets/entities/main_character/player.tscn
 res://assets/entities/main_character/player.gd
+res://assets/entities/main_character/player_model.tscn
+res://assets/main_scene.tscn
+res://assets/ui/MAIN_TITLE.tscn

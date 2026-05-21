@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bqdr6tipx65d3" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
 [ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
 [ext_resource type="AudioStream" uid="uid://b2nw1jhc04ktf" path="res://assets/music/Q367 Medieval Boss Fight 5.mp3" id="4_c7nud"]
-[ext_resource type="PackedScene" uid="uid://bqux2geifmvvw" path="res://assets/entities/main_character/knight.glb" id="5_ydyut"]
+[ext_resource type="PackedScene" uid="uid://dqtp2hft6j2hd" path="res://assets/entities/main_character/player_model.tscn" id="5_ydyut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
 radius = 0.2836914
@@ -40,6 +40,7 @@ bus = &"Sounds"
 [node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
 stream = ExtResource("4_c7nud")
 volume_db = -18.467
+autoplay = true
 parameters/looping = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]
@@ -62,5 +63,5 @@ shape = SubResource("BoxShape3D_c7nud")
 debug_color = Color(1, 0.16470589, 0.30980393, 1)
 debug_fill = false
 
-[node name="knight" parent="BODY" unique_id=1691569082 instance=ExtResource("5_ydyut")]
-transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, -0.962, 0)
+[node name="knight" parent="BODY" unique_id=1206638180 instance=ExtResource("5_ydyut")]
+transform = Transform3D(0.4, -6.9938224e-08, 0, 6.9938224e-08, 0.4, 0, 0, 0, 0.4, 0, -0.9789928, 0)
