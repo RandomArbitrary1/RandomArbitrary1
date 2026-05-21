@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bqux2geifmvvw" path="res://assets/entities/main_character/knight.glb" id="5_ydyut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
+radius = 0.2836914
+height = 1.9074707
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7nud"]
 size = Vector3(3, 2.1724854, 3)
@@ -41,7 +43,9 @@ volume_db = -18.467
 parameters/looping = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04626465, 0)
 shape = SubResource("CapsuleShape3D_qte20")
+debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="BODY" type="Node3D" parent="." unique_id=841542711]
 

@@ -18,7 +18,7 @@ var rotation_speed = 10.0
 @onready var hud_hp = $"../CanvasLayer/Hud/HP"
 @onready var dodge_sfx = $sounds/dodge
 @onready var attack_sfx: AudioStreamPlayer = $sounds/attack
-
+@onready var collision = $CollisionShape3D
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -38,7 +38,9 @@ func _process(_delta):
 	camera_pivot.rotation.x = camera_rotation.x  # Pitch
 	camera_pivot.rotation.y = camera_rotation.y  # Yaw
 	hud_hp.text = str(Attack_hurt_time)
+	collision.shape.height = 1.9
 	if Invincibility > 0.0:
+		collision.shape.height = 1.5
 		Invincibility -= _delta
 	if Attack_hurt_time > 0.0:
 		Attack_hurt_time -= _delta
@@ -67,7 +69,7 @@ func attack():
 	Attack_hurt_time = 0.8
 	
 func dodge():
-	Invincibility = 1.0
+	Invincibility = 0.5
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, camera_pivot.rotation.y).normalized()
 	var horizontal_velocity = direction * SPEED * 2
