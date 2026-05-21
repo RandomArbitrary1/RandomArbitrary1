@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqs241tew4vs2"]
+
+[ext_resource type="Script" uid="uid://cyxgb36w8kf61" path="res://assets/entities/enemies/enemy.gd" id="1_re45t"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ofnxl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_re45t"]
+
+[node name="Enemy" type="CharacterBody3D" unique_id=19971874]
+script = ExtResource("1_re45t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=144748914]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_ofnxl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=87344642]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_re45t")

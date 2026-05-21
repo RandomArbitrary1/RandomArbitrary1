@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://qotj2tagmijk"]
+
+[ext_resource type="Script" uid="uid://b5pge1x1t7ar8" path="res://assets/entities/main_character/player.gd" id="1_hwog1"]
+[ext_resource type="AudioStream" uid="uid://bqdr6tipx65d3" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
+[ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
+[ext_resource type="AudioStream" uid="uid://b2nw1jhc04ktf" path="res://assets/music/Q367 Medieval Boss Fight 5.mp3" id="4_c7nud"]
+[ext_resource type="PackedScene" uid="uid://bqux2geifmvvw" path="res://assets/entities/main_character/knight.glb" id="5_ydyut"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7nud"]
+size = Vector3(3, 2.1724854, 3)
+
+[node name="Player" type="CharacterBody3D" unique_id=1314012681]
+script = ExtResource("1_hwog1")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1189282736]
+
+[node name="CameraArm" type="SpringArm3D" parent="CameraPivot" unique_id=1295550171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608369, 1.1526634, 2.182782)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/CameraArm" unique_id=451734283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18665898, 0.6754699, 1.3875456)
+
+[node name="sounds" type="Node" parent="." unique_id=657052960]
+
+[node name="dodge" type="AudioStreamPlayer" parent="sounds" unique_id=629439217]
+stream = ExtResource("3_dxsce")
+bus = &"Sounds"
+
+[node name="attack" type="AudioStreamPlayer" parent="sounds" unique_id=246782063]
+stream = ExtResource("3_c7nud")
+volume_db = -14.596
+bus = &"Sounds"
+
+[node name="music" type="Node" parent="." unique_id=510248783]
+
+[node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
+stream = ExtResource("4_c7nud")
+volume_db = -18.467
+parameters/looping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]
+shape = SubResource("CapsuleShape3D_qte20")
+
+[node name="BODY" type="Node3D" parent="." unique_id=841542711]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="BODY" unique_id=1996457104]
+omni_range = 5.9939713
+
+[node name="Hurtbox" type="Area3D" parent="BODY" unique_id=1145650273]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BODY/Hurtbox" unique_id=618921521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13800049, 0)
+shape = SubResource("BoxShape3D_c7nud")
+debug_color = Color(1, 0.16470589, 0.30980393, 1)
+debug_fill = false
+
+[node name="knight" parent="BODY" unique_id=1691569082 instance=ExtResource("5_ydyut")]
+transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, -0.962, 0)
