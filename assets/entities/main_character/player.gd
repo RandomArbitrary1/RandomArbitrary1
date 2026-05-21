@@ -10,6 +10,7 @@ var camera_rotation = Vector2.ZERO
 var HEALTH = 100
 var Invincibility = 0
 var Attack_hurt_time = 0
+@onready var body = $BODY
 @onready var camera_pivot = $CameraPivot
 @onready var camera_arm = $CameraPivot/CameraArm
 @onready var hud_hp = $"../CanvasLayer/Hud/HP"
@@ -47,6 +48,7 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var cam_y_rotation = camera_pivot.rotation.y
 	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, cam_y_rotation).normalized()
+	body.rotation = direction
 	var target_velocity = direction * SPEED
 	var horizontal_velocity = velocity
 	horizontal_velocity = horizontal_velocity.move_toward(target_velocity, ACCEL * delta)
