@@ -21,6 +21,10 @@ var expected_roll = false
 @onready var dodge_sfx = $sounds/dodge
 @onready var attack_sfx: AudioStreamPlayer = $sounds/attack
 @onready var collision = $CollisionShape3D
+@onready var attack_hitbox: Area3D = $BODY/AttackHitbox
+@onready var hit_enemy_sfx: AudioStreamPlayer = $sounds/hit_enemy
+
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -46,6 +50,12 @@ func _process(_delta):
 		body.rotation.x = 1
 	if Attack_hurt_time > 0.0:
 		Attack_hurt_time -= _delta
+		var overlapping_areas = attack_hitbox.get_overlapping_areas()
+		for area in overlapping_areas:
+			if area.get_parent().is_in_group("enemy"):
+				if area.INVINCIBLE < 0.1:
+					area.hit(Attack_Damage)
+					hit_enemy_sfx.play()
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://cqs241tew4vs2"]
 
 [ext_resource type="Script" uid="uid://cyxgb36w8kf61" path="res://assets/entities/enemies/enemy.gd" id="1_re45t"]
+[ext_resource type="Script" uid="uid://ca3ts3n2g8mvm" path="res://assets/entities/enemies/hitbox.gd" id="2_8u0gq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ofnxl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_re45t"]
 
-[node name="Enemy" type="CharacterBody3D" unique_id=19971874]
+[sub_resource type="BoxShape3D" id="BoxShape3D_re45t"]
+size = Vector3(2.0683594, 3.8908691, 2.1445923)
+
+[node name="Enemy" type="CharacterBody3D" unique_id=19971874 groups=["enemy"]]
 script = ExtResource("1_re45t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=144748914]
@@ -16,3 +20,11 @@ mesh = SubResource("CapsuleMesh_ofnxl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=87344642]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_re45t")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1525836176]
+script = ExtResource("2_8u0gq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=140820811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107421875, 0.059936523, -0.03604126)
+shape = SubResource("BoxShape3D_re45t")
+debug_color = Color(1, 1, 0, 1)

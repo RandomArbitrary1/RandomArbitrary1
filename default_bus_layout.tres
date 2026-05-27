@@ -3,8 +3,8 @@
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
 room_size = 1.0
-damping = 0.0
-wet = 0.06
+damping = 1.0
+wet = 0.03
 
 [resource]
 bus/1/name = &"Sounds"
