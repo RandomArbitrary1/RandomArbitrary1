@@ -1,19 +1,3 @@
-[remap]
-
-importer="mp3"
-type="AudioStreamMP3"
-uid="uid://bqdr6tipx65d3"
-path="res://.godot/imported/attack.mp3-771e28885f1176399c07b27d45eb23f0.mp3str"
-
-[deps]
-
-source_file="res://assets/sfx/attack.mp3"
-dest_files=["res://.godot/imported/attack.mp3-771e28885f1176399c07b27d45eb23f0.mp3str"]
-
-[params]
-
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
-bar_beats=4
+version https://git-lfs.github.com/spec/v1
+oid sha256:c8c96570d329961b0ab84894627c928a307500b1a5a0dfe73d3cf5381cfe9877
+size 358

@@ -1,2 +1,26 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+<<<<<<< HEAD
+=======
+*.glb filter=lfs diff=lfs merge=lfs -text
+*.import filter=lfs diff=lfs merge=lfs -text
+*.translation filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.exr filter=lfs diff=lfs merge=lfs -text
+*.hdr filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.dds filter=lfs diff=lfs merge=lfs -text
+*.bmp filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+*.gltf filter=lfs diff=lfs merge=lfs -text
+*.dae filter=lfs diff=lfs merge=lfs -text
+no filter=lfs diff=lfs merge=lfs -text
+way filter=lfs diff=lfs merge=lfs -text
+>>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2

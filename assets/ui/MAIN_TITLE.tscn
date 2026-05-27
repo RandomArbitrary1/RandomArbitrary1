@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bem111e4n0p3q"]
+
+[node name="Node2D" type="Node2D" unique_id=857851988]
+
+[node name="Label" type="Label" parent="." unique_id=879434698]
+offset_right = 1600.0
+offset_bottom = 534.0
+theme_override_colors/font_color = Color(1, 0.45137888, 0.39265016, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.5135302, 0.47349894, 0)
+theme_override_colors/font_outline_color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+theme_override_font_sizes/font_size = 75
+text = "Muspelheim"
+horizontal_alignment = 1
