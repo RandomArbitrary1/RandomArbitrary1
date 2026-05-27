@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cqs241tew4vs2"]
 
-[ext_resource type="Script" uid="uid://cyxgb36w8kf61" path="res://assets/entities/enemies/enemy.gd" id="1_re45t"]
-[ext_resource type="Script" uid="uid://ca3ts3n2g8mvm" path="res://assets/entities/enemies/hitbox.gd" id="2_8u0gq"]
+[ext_resource type="Script" uid="uid://cyxgb36w8kf61" path="res://assets/entities/enemies/test/enemy.gd" id="1_re45t"]
+[ext_resource type="Script" uid="uid://ca3ts3n2g8mvm" path="res://assets/entities/enemies/test/hitbox.gd" id="2_8u0gq"]
+[ext_resource type="Script" uid="uid://dltay6mbvhipk" path="res://assets/statemach.gd" id="3_564b3"]
+[ext_resource type="Script" uid="uid://dthie3q4r5cyx" path="res://assets/scripts/EnemyIdle.gd" id="4_w45v6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ofnxl"]
 
@@ -28,3 +30,11 @@ script = ExtResource("2_8u0gq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107421875, 0.059936523, -0.03604126)
 shape = SubResource("BoxShape3D_re45t")
 debug_color = Color(1, 1, 0, 1)
+
+[node name="statemach" type="Node" parent="." unique_id=1681802564 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_564b3")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="statemach" unique_id=1379603065]
+script = ExtResource("4_w45v6")
+metadata/_custom_type_script = "uid://dthie3q4r5cyx"
