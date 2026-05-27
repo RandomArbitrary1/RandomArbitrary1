@@ -40,11 +40,14 @@ var expected_roll = false
 =======
 @onready var attack_hitbox: Area3D = $BODY/AttackHitbox
 @onready var hit_enemy_sfx: AudioStreamPlayer = $sounds/hit_enemy
+const EXPLOSION = preload("uid://cgjpf2llv2b8d")
+const SMOKE_STEP = preload("uid://dpfq4acgi117g")
 
 
 >>>>>>> main
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -74,8 +77,13 @@ func _process(_delta):
 	if Invincibility > 0.0:
 		Invincibility -= _delta
 		body.rotation.x = 1
+<<<<<<< HEAD
 >>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2
+=======
+	
+>>>>>>> dab772ac0c1a90412fcbbee65189a73564071f59
 	if Attack_hurt_time > 0.0:
+		
 		Attack_hurt_time -= _delta
 		var overlapping_areas = attack_hitbox.get_overlapping_areas()
 		for area in overlapping_areas:
@@ -106,6 +114,9 @@ func _physics_process(delta: float) -> void:
 		var target_rotation = atan2(direction.x, direction.z)
 		char_rotation = lerp_angle(char_rotation, target_rotation, rotation_speed * delta)
 		body.rotation.y = char_rotation
+		var smoke = SMOKE_STEP.instantiate()
+		smoke.position.y = body.position.y - 1
+		add_child(smoke)
 	#body.rotation = Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, cam_y_rotation).normalized()
 >>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2
 	var horizontal_velocity = velocity
@@ -127,6 +138,8 @@ func dodge():
 	Invincibility = 1.0
 =======
 	Attack_hurt_time = 0.5
+	var vfx = EXPLOSION.instantiate()
+	add_child(vfx)
 	
 func dodge():
 	expected_roll = false

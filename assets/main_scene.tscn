@@ -148,8 +148,12 @@ sky_material = SubResource("ShaderMaterial_jqvu6")
 [ext_resource type="PackedScene" uid="uid://cqs241tew4vs2" path="res://assets/entities/enemies/enemy.tscn" id="4_n5yp7"]
 =======
 [ext_resource type="PackedScene" uid="uid://cqs241tew4vs2" path="res://assets/entities/enemies/test/enemy.tscn" id="4_n5yp7"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="4_wrj0a"]
 >>>>>>> main
+=======
+[ext_resource type="PackedScene" path="res://assets/levels/map.tscn" id="4_wrj0a"]
+>>>>>>> dab772ac0c1a90412fcbbee65189a73564071f59
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(0, 0.45886093, 0.78677654, 1)
