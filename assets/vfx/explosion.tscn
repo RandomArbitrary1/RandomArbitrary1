@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cgjpf2llv2b8d"]
+
+[ext_resource type="Script" uid="uid://b2btudykk8syw" path="res://assets/vfx/explosion.gd" id="1_tsg42"]
+
+[sub_resource type="Curve" id="Curve_8naro"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.3305785, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tsg42"]
+curve = SubResource("Curve_8naro")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8naro"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 9.0
+initial_velocity_max = 25.0
+scale_min = 0.099999994
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_tsg42")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsg42"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8naro"]
+material = SubResource("StandardMaterial3D_tsg42")
+top_radius = 0.1
+bottom_radius = 0.0
+
+[node name="Explosion" type="Node3D" unique_id=856933159]
+script = ExtResource("1_tsg42")
+
+[node name="Explode" type="GPUParticles3D" parent="." unique_id=816891294]
+emitting = false
+amount = 24
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_8naro")
+draw_pass_1 = SubResource("CylinderMesh_8naro")
