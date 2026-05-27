@@ -23,7 +23,10 @@ buses/default_bus_layout="uid://dnd511fb4jga"
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+<<<<<<< HEAD
 window/vsync/vsync_mode=0
+=======
+>>>>>>> main
 
 [input]
 

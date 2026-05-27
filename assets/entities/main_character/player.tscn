@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b5pge1x1t7ar8" path="res://assets/entities/main_character/player.gd" id="1_hwog1"]
 [ext_resource type="AudioStream" uid="uid://bqdr6tipx65d3" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
 [ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
+[ext_resource type="AudioStream" uid="uid://bew6v6w872hbb" path="res://assets/sfx/swing.mp3" id="3_hmrda"]
 [ext_resource type="AudioStream" uid="uid://b2nw1jhc04ktf" path="res://assets/music/Q367 Medieval Boss Fight 5.mp3" id="4_c7nud"]
 <<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bqux2geifmvvw" path="res://assets/entities/main_character/knight.glb" id="5_ydyut"]
@@ -19,7 +20,14 @@ height = 1.9074707
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7nud"]
 size = Vector3(3, 2.1724854, 3)
 
-[node name="Player" type="CharacterBody3D" unique_id=1314012681]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmrda"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.019607844)
+
+[sub_resource type="BoxMesh" id="BoxMesh_01ej1"]
+size = Vector3(3.17, 2.445, 2.97)
+
+[node name="Player" type="CharacterBody3D" unique_id=1314012681 groups=["player"]]
 script = ExtResource("1_hwog1")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1189282736]
@@ -37,8 +45,13 @@ stream = ExtResource("3_dxsce")
 bus = &"Sounds"
 
 [node name="attack" type="AudioStreamPlayer" parent="sounds" unique_id=246782063]
-stream = ExtResource("3_c7nud")
+stream = ExtResource("3_hmrda")
 volume_db = -14.596
+bus = &"Sounds"
+
+[node name="hit_enemy" type="AudioStreamPlayer" parent="sounds" unique_id=1235947667]
+stream = ExtResource("3_c7nud")
+volume_db = -14.0
 bus = &"Sounds"
 
 [node name="music" type="Node" parent="." unique_id=510248783]
@@ -57,25 +70,31 @@ shape = SubResource("CapsuleShape3D_qte20")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 >>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2
 
-[node name="BODY" type="Node3D" parent="." unique_id=841542711]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="BODY" unique_id=1996457104]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1996457104]
 omni_range = 5.9939713
 
-[node name="Hurtbox" type="Area3D" parent="BODY" unique_id=1145650273]
-collision_layer = 2
-collision_mask = 0
+[node name="BODY" type="Node3D" parent="." unique_id=841542711]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BODY/Hurtbox" unique_id=618921521]
+[node name="AttackHitbox" type="Area3D" parent="BODY" unique_id=1145650273]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BODY/AttackHitbox" unique_id=618921521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13800049, 0)
 shape = SubResource("BoxShape3D_c7nud")
 debug_color = Color(1, 0.16470589, 0.30980393, 1)
 debug_fill = false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [node name="knight" parent="BODY" unique_id=1691569082 instance=ExtResource("5_ydyut")]
 transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, -0.962, 0)
 =======
+=======
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BODY/AttackHitbox" unique_id=828423560]
+transform = Transform3D(0.95994264, 0, 0, 0, 0.8998425, 0, 0, 0, 1, 0, 0.12605357, 0)
+material_override = SubResource("StandardMaterial3D_hmrda")
+mesh = SubResource("BoxMesh_01ej1")
+
+>>>>>>> main
 [node name="knight" parent="BODY" unique_id=1206638180 instance=ExtResource("5_ydyut")]
 transform = Transform3D(0.4, -6.9938224e-08, 0, 6.9938224e-08, 0.4, 0, 0, 0, 0.4, 0, -0.9789928, 0)
 >>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2
