@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f3f4b39d02736005aabffc01f81013b7e213b0f745903233bdd094c779d1ad9
-size 352
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvoyjb8kxuuho"
+path="res://.godot/imported/jump.mp3-3425b37d9c56e94753a07b915ce51465.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/jump.mp3"
+dest_files=["res://.godot/imported/jump.mp3-3425b37d9c56e94753a07b915ce51465.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dracltb1bitux"
-path="res://.godot/imported/ground.blend-f649bc324a0adb3d49db802502f5c5c7.scn"
+uid="uid://c8uxoj5igrixu"
+path="res://.godot/imported/DeadTrees.blend-f5fe68ddbf8ed3877eb5c6d1627ad534.scn"
 
 [deps]
 
-source_file="res://assets/3dmodels/ground.blend"
-dest_files=["res://.godot/imported/ground.blend-f649bc324a0adb3d49db802502f5c5c7.scn"]
+source_file="res://assets/3dmodels/DeadTrees/DeadTrees.blend"
+dest_files=["res://.godot/imported/DeadTrees.blend-f5fe68ddbf8ed3877eb5c6d1627ad534.scn"]
 
 [params]
 

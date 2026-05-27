@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:80ee3626f0d2b2b7779d502173bb42b11aca93cf4319f5c31d727e86bf260901
-size 352
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://befi7a0xwl4ax"
+path="res://.godot/imported/step.mp3-c73d76ca93d653e8e27c814bd5468f98.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/step.mp3"
+dest_files=["res://.godot/imported/step.mp3-c73d76ca93d653e8e27c814bd5468f98.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

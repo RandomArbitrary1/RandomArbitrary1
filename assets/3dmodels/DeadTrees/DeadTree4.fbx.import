@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://duuvsc53me7mf"
-path="res://.godot/imported/Lowpoly_Cliff_Rocks.fbx-ebb5fcac9a4771e6e811bbbca5e59818.scn"
+uid="uid://bqpapwjpeykx0"
+path="res://.godot/imported/DeadTree4.fbx-c4d627b648e1ac712b046c0f498fcec3.scn"
 
 [deps]
 
-source_file="res://assets/3dmodels/volcanic rocks/source/Lowpoly_Cliff_Rocks.fbx"
-dest_files=["res://.godot/imported/Lowpoly_Cliff_Rocks.fbx-ebb5fcac9a4771e6e811bbbca5e59818.scn"]
+source_file="res://assets/3dmodels/DeadTrees/DeadTree4.fbx"
+dest_files=["res://.godot/imported/DeadTree4.fbx-c4d627b648e1ac712b046c0f498fcec3.scn"]
 
 [params]
 

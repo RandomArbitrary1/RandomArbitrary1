@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:131be860cc06b6079308b619f5f72bf2c62ab6db4df43639985410f9881a1e25
-size 726
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mlreuc8hli06"
+path="res://.godot/imported/rock04.obj-c0195999af0b0a833912003b595f7fa5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rock04.obj-c0195999af0b0a833912003b595f7fa5.mesh"]
+
+source_file="res://assets/3dmodels/volcanic rocks/source/rock04.obj"
+dest_files=["res://.godot/imported/rock04.obj-c0195999af0b0a833912003b595f7fa5.mesh", "res://.godot/imported/rock04.obj-c0195999af0b0a833912003b595f7fa5.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

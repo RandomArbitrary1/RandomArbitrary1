@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:10b2de772025277f2094824342f59d820718023cab480e5d0c545e89013a48d1
-size 761
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://upsn4i0fhnl2"
+path="res://.godot/imported/cliff_rock_11.obj-7cc55ed2dc03ccff0309a7c2e114cf96.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_rock_11.obj-7cc55ed2dc03ccff0309a7c2e114cf96.mesh"]
+
+source_file="res://assets/3dmodels/volcanic rocks/source/cliff_rock_11.obj"
+dest_files=["res://.godot/imported/cliff_rock_11.obj-7cc55ed2dc03ccff0309a7c2e114cf96.mesh", "res://.godot/imported/cliff_rock_11.obj-7cc55ed2dc03ccff0309a7c2e114cf96.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
