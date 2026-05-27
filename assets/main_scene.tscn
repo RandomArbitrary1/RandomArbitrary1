@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://ws1g1bnaerl3" path="res://assets/scripts/State.gd" id="1_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://b2dfqinja0qn2" path="res://assets/ui/health.tscn" id="2_ivrm4"]
 [ext_resource type="PackedScene" uid="uid://cqs241tew4vs2" path="res://assets/entities/enemies/test/enemy.tscn" id="4_n5yp7"]
-[ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="4_wrj0a"]
+[ext_resource type="PackedScene" path="res://assets/levels/map.tscn" id="4_wrj0a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(0, 0.45886093, 0.78677654, 1)
