@@ -1,21 +1,15 @@
 [gd_scene format=3 uid="uid://qotj2tagmijk"]
 
 [ext_resource type="Script" uid="uid://b5pge1x1t7ar8" path="res://assets/entities/main_character/player.gd" id="1_hwog1"]
-[ext_resource type="AudioStream" uid="uid://bqdr6tipx65d3" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
-[ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
-[ext_resource type="AudioStream" uid="uid://bew6v6w872hbb" path="res://assets/sfx/swing.mp3" id="3_hmrda"]
-[ext_resource type="AudioStream" uid="uid://b2nw1jhc04ktf" path="res://assets/music/Q367 Medieval Boss Fight 5.mp3" id="4_c7nud"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://bqux2geifmvvw" path="res://assets/entities/main_character/knight.glb" id="5_ydyut"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
-=======
+[ext_resource type="AudioStream" uid="uid://7gnp3n00laav" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
+[ext_resource type="AudioStream" uid="uid://binooi72ob4ew" path="res://assets/sfx/coin.mp3" id="3_dxsce"]
+[ext_resource type="AudioStream" uid="uid://7gnp3n00laav" path="res://assets/sfx/attack.mp3" id="3_hmrda"]
+[ext_resource type="AudioStream" uid="uid://x6sf3pvnbuc7" path="res://assets/music/Q367 Medieval Boss Fight 5.mp3" id="4_c7nud"]
 [ext_resource type="PackedScene" uid="uid://dqtp2hft6j2hd" path="res://assets/entities/main_character/player_model.tscn" id="5_ydyut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
 radius = 0.2836914
 height = 1.9074707
->>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7nud"]
 size = Vector3(3, 2.1724854, 3)
@@ -62,13 +56,9 @@ volume_db = -18.467
 parameters/looping = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]
-<<<<<<< HEAD
-shape = SubResource("CapsuleShape3D_qte20")
-=======
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04626465, 0)
 shape = SubResource("CapsuleShape3D_qte20")
 debug_color = Color(0, 0.6, 0.69803923, 1)
->>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1996457104]
 omni_range = 5.9939713
@@ -83,18 +73,10 @@ shape = SubResource("BoxShape3D_c7nud")
 debug_color = Color(1, 0.16470589, 0.30980393, 1)
 debug_fill = false
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-[node name="knight" parent="BODY" unique_id=1691569082 instance=ExtResource("5_ydyut")]
-transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, -0.962, 0)
-=======
-=======
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BODY/AttackHitbox" unique_id=828423560]
 transform = Transform3D(0.95994264, 0, 0, 0, 0.8998425, 0, 0, 0, 1, 0, 0.12605357, 0)
 material_override = SubResource("StandardMaterial3D_hmrda")
 mesh = SubResource("BoxMesh_01ej1")
 
->>>>>>> main
 [node name="knight" parent="BODY" unique_id=1206638180 instance=ExtResource("5_ydyut")]
 transform = Transform3D(0.4, -6.9938224e-08, 0, 6.9938224e-08, 0.4, 0, 0, 0, 0.4, 0, -0.9789928, 0)
->>>>>>> e6c4e729a030304fa2cdfb0c60967e9e7331c2c2

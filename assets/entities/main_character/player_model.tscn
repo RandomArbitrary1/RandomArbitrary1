@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqtp2hft6j2hd"]
 
-[ext_resource type="PackedScene" uid="uid://bqux2geifmvvw" path="res://assets/entities/main_character/knight.glb" id="1_2q8e4"]
+[ext_resource type="PackedScene" uid="uid://dpr55rs5fqls4" path="res://assets/entities/main_character/knight.glb" id="1_2q8e4"]
 
 [node name="knight" unique_id=1206638180 instance=ExtResource("1_2q8e4")]
 
