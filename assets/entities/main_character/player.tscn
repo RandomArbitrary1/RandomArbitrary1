@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bqdr6tipx65d3" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
 [ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
 [ext_resource type="AudioStream" uid="uid://bew6v6w872hbb" path="res://assets/sfx/swing.mp3" id="3_hmrda"]
-[ext_resource type="AudioStream" uid="uid://b2nw1jhc04ktf" path="res://assets/music/Q367 Medieval Boss Fight 5.mp3" id="4_c7nud"]
+[ext_resource type="AudioStream" uid="uid://w6r6aq07ptli" path="res://assets/music/Q367 Medieval Boss Fight.mp3" id="5_hmrda"]
 [ext_resource type="PackedScene" uid="uid://dqtp2hft6j2hd" path="res://assets/entities/main_character/player_model.tscn" id="5_ydyut"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
@@ -51,7 +51,7 @@ bus = &"Sounds"
 [node name="music" type="Node" parent="." unique_id=510248783]
 
 [node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
-stream = ExtResource("4_c7nud")
+stream = ExtResource("5_hmrda")
 volume_db = -18.467
 parameters/looping = true
 
