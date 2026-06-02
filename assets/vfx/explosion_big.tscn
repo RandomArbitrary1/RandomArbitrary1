@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ipemhx83pl"]
+
+[ext_resource type="Script" uid="uid://b2btudykk8syw" path="res://assets/vfx/explosion.gd" id="1_ugbtk"]
+
+[sub_resource type="Curve" id="Curve_75rq0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.3305785, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ay4pi"]
+curve = SubResource("Curve_75rq0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lpacl"]
+lifetime_randomness = 1.0
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 7.0
+scale_min = 0.19999999
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_ay4pi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03wd5"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4um3l"]
+material = SubResource("StandardMaterial3D_03wd5")
+top_radius = 0.1
+bottom_radius = 0.0
+
+[node name="ExplosionBIG" type="Node3D" unique_id=2081392801]
+script = ExtResource("1_ugbtk")
+
+[node name="Explode" type="GPUParticles3D" parent="." unique_id=209557841]
+emitting = false
+amount = 24
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_lpacl")
+draw_pass_1 = SubResource("CylinderMesh_4um3l")

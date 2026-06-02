@@ -1,7 +1,7 @@
 extends State
 class_name EnemyIdle
 
-@export var move_speed := 10
+@export var move_speed := 3
 @onready var enemy: CharacterBody3D = $"../.."
 
 var move_direction : Vector3

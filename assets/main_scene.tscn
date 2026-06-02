@@ -45,13 +45,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0296822, 0, 2.4034863)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.312294, 2.12614, -10.7899)
 
 [node name="Enemy2" parent="." unique_id=985758049 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.66252, 2.000021, -5.3815336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.47807, 2.000021, -29.634136)
 
 [node name="Enemy3" parent="." unique_id=150427213 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.323627, 2.0000114, 14.079933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.323627, 2.0000114, -42.67212)
 
 [node name="Enemy4" parent="." unique_id=2042355723 instance=ExtResource("4_n5yp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.64988, 2.0000305, 27.047688)
 
 [node name="Enemy5" parent="." unique_id=666475383 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.93586, 2.0737119, -29.792477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.70558, 2.0737119, -29.792477)

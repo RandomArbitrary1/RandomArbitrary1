@@ -1,5 +1,5 @@
 extends Area3D
-var HEALTH = 10
+var HEALTH = 2.0
 var INVINCIBLE = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
