@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dfaxkoyjmlvgr" path="res://assets/entities/enemies/test/wooden_enemy.fbx" id="2_w45v6"]
 [ext_resource type="Script" uid="uid://dltay6mbvhipk" path="res://assets/statemach.gd" id="3_564b3"]
 [ext_resource type="Script" uid="uid://dthie3q4r5cyx" path="res://assets/scripts/EnemyIdle.gd" id="4_w45v6"]
+[ext_resource type="AudioStream" uid="uid://bctrva4k4cmnx" path="res://assets/sfx/fire_burst.mp3" id="6_wwshd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_re45t"]
 height = 1.7290039
@@ -37,3 +38,7 @@ initial_state = NodePath("EnemyIdle")
 [node name="EnemyIdle" type="Node" parent="statemach" unique_id=1379603065]
 script = ExtResource("4_w45v6")
 metadata/_custom_type_script = "uid://dthie3q4r5cyx"
+
+[node name="FireBurst" type="AudioStreamPlayer3D" parent="." unique_id=1744886906]
+stream = ExtResource("6_wwshd")
+max_distance = 45.0

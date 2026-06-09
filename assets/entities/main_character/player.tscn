@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://qotj2tagmijk"]
 
 [ext_resource type="Script" uid="uid://b5pge1x1t7ar8" path="res://assets/entities/main_character/player.gd" id="1_hwog1"]
-[ext_resource type="AudioStream" uid="uid://bqdr6tipx65d3" path="res://assets/sfx/attack.mp3" id="3_c7nud"]
 [ext_resource type="AudioStream" uid="uid://cvoyjb8kxuuho" path="res://assets/sfx/jump.mp3" id="3_dxsce"]
 [ext_resource type="AudioStream" uid="uid://bew6v6w872hbb" path="res://assets/sfx/swing.mp3" id="3_hmrda"]
+[ext_resource type="AudioStream" uid="uid://dsa52xvya8a6b" path="res://assets/sfx/enemy_hit.mp3" id="4_hmrda"]
 [ext_resource type="AudioStream" uid="uid://w6r6aq07ptli" path="res://assets/music/Q367 Medieval Boss Fight.mp3" id="5_hmrda"]
 [ext_resource type="PackedScene" uid="uid://dqtp2hft6j2hd" path="res://assets/entities/main_character/player_model.tscn" id="5_ydyut"]
+[ext_resource type="PackedScene" uid="uid://b2dfqinja0qn2" path="res://assets/ui/health.tscn" id="7_01ej1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
 radius = 0.2836914
@@ -22,9 +23,11 @@ albedo_color = Color(1, 1, 0, 0.019607844)
 size = Vector3(3.17, 2.445, 2.97)
 
 [node name="Player" type="CharacterBody3D" unique_id=1314012681 groups=["player"]]
+process_mode = 3
 script = ExtResource("1_hwog1")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1189282736]
+process_mode = 1
 
 [node name="CameraArm" type="SpringArm3D" parent="CameraPivot" unique_id=1295550171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608369, 1.1526634, 2.182782)
@@ -33,50 +36,71 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3608369, 1.1526634, 2.18278
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18665898, 0.6754699, 1.3875456)
 
 [node name="sounds" type="Node" parent="." unique_id=657052960]
+process_mode = 1
 
 [node name="dodge" type="AudioStreamPlayer" parent="sounds" unique_id=629439217]
+process_mode = 1
 stream = ExtResource("3_dxsce")
+volume_db = 8.398
 bus = &"Sounds"
 
 [node name="attack" type="AudioStreamPlayer" parent="sounds" unique_id=246782063]
+process_mode = 1
 stream = ExtResource("3_hmrda")
 volume_db = -14.596
 bus = &"Sounds"
 
 [node name="hit_enemy" type="AudioStreamPlayer" parent="sounds" unique_id=1235947667]
-stream = ExtResource("3_c7nud")
+process_mode = 1
+stream = ExtResource("4_hmrda")
 volume_db = -14.0
 bus = &"Sounds"
 
 [node name="music" type="Node" parent="." unique_id=510248783]
+process_mode = 1
 
 [node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
+process_mode = 1
 stream = ExtResource("5_hmrda")
-volume_db = -18.467
+volume_db = -13.0
+autoplay = true
 parameters/looping = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04626465, 0)
 shape = SubResource("CapsuleShape3D_qte20")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1996457104]
+process_mode = 1
 omni_range = 5.9939713
 
 [node name="BODY" type="Node3D" parent="." unique_id=841542711]
+process_mode = 1
 
 [node name="AttackHitbox" type="Area3D" parent="BODY" unique_id=1145650273]
+process_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BODY/AttackHitbox" unique_id=618921521]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13800049, 0)
 shape = SubResource("BoxShape3D_c7nud")
 debug_color = Color(1, 0.16470589, 0.30980393, 1)
 debug_fill = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BODY/AttackHitbox" unique_id=828423560]
+[node name="hitboxSHAPEDEBUG" type="MeshInstance3D" parent="BODY/AttackHitbox" unique_id=828423560]
+process_mode = 1
 transform = Transform3D(0.95994264, 0, 0, 0, 0.8998425, 0, 0, 0, 1, 0, 0.12605357, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_hmrda")
 mesh = SubResource("BoxMesh_01ej1")
 
 [node name="knight" parent="BODY" unique_id=1206638180 instance=ExtResource("5_ydyut")]
+process_mode = 1
 transform = Transform3D(0.4, -6.9938224e-08, 0, 6.9938224e-08, 0.4, 0, 0, 0, 0.4, 0, -0.9789928, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1050892432]
+process_mode = 1
+
+[node name="Hud" parent="CanvasLayer" unique_id=2090949931 instance=ExtResource("7_01ej1")]

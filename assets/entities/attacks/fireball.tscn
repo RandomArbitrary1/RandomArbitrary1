@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cx1gh1b7ls155"]
+
+[ext_resource type="Script" uid="uid://n7rm75ffc126" path="res://assets/entities/attacks/fireball.gd" id="1_6f0tp"]
+[ext_resource type="AudioStream" uid="uid://dayj5lw1ytb5d" path="res://assets/sfx/fire_ambience.mp3" id="2_isgdt"]
+
+[sub_resource type="Curve" id="Curve_w1u5y"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(2, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6f0tp"]
+curve = SubResource("Curve_w1u5y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w1u5y"]
+gravity = Vector3(0, 2.24, 0)
+scale_min = 0.79999995
+scale_curve = SubResource("CurveTexture_6f0tp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isgdt"]
+transparency = 1
+albedo_color = Color(0.52679324, 8.5432083e-07, 2.8878452e-07, 0.81960785)
+metallic_specular = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_6f0tp"]
+material = SubResource("StandardMaterial3D_isgdt")
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w1u5y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6f0tp"]
+albedo_color = Color(3.5629182, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_isgdt"]
+material = SubResource("StandardMaterial3D_6f0tp")
+radial_segments = 9
+rings = 5
+
+[node name="Fireball" type="Node3D" unique_id=960448113]
+script = ExtResource("1_6f0tp")
+
+[node name="RedSmoke" type="GPUParticles3D" parent="." unique_id=1395937170]
+amount = 10
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_w1u5y")
+draw_pass_1 = SubResource("SphereMesh_6f0tp")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=84567381]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1481861386]
+shape = SubResource("SphereShape3D_w1u5y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1317235615]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("SphereMesh_isgdt")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=289289815]
+transform = Transform3D(3.51, 0, 0, 0, -1.5342697e-07, 3.51, 0, -3.51, -1.5342697e-07, 0, 0, 0)
+
+[node name="Ambience" type="AudioStreamPlayer3D" parent="." unique_id=1425834669]
+stream = ExtResource("2_isgdt")
+volume_db = -5.0
+unit_size = 5.0
+max_db = 0.0
+autoplay = true
+max_distance = 25.0
+parameters/looping = true

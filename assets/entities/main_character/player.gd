@@ -17,14 +17,15 @@ var expected_roll = false
 @onready var body = $BODY
 @onready var camera_pivot = $CameraPivot
 @onready var camera_arm = $CameraPivot/CameraArm
-@onready var hud_hp = $"../CanvasLayer/Hud/HP"
+@onready var hud_hp = $CanvasLayer/Hud/HP
+@onready var hud_ending_layer = $CanvasLayer/Hud/End
 @onready var dodge_sfx = $sounds/dodge
 @onready var attack_sfx: AudioStreamPlayer = $sounds/attack
 @onready var collision = $CollisionShape3D
 @onready var attack_hitbox: Area3D = $BODY/AttackHitbox
 @onready var hit_enemy_sfx: AudioStreamPlayer = $sounds/hit_enemy
-const SWISH = preload("uid://c3b1ucalusqio")
-const SMOKE_STEP = preload("uid://dpfq4acgi117g")
+const SWISH = preload("res://assets/vfx/swish.tscn")
+const SMOKE_STEP = preload("res://assets/vfx/smoke_step.tscn")
 const ENEMY_PARTICLES = preload("res://assets/vfx/explosion_big.tscn")
 
 
@@ -32,6 +33,10 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _unhandled_input(event):
+	if Input.is_action_just_pressed("pause"):
+		toggle_pause()
+	if get_tree().paused:
+		return
 	if event is InputEventMouseMotion:
 		camera_rotation.x -= event.relative.y * SENSITIVITY
 		camera_rotation.y -= event.relative.x * SENSITIVITY
@@ -42,11 +47,15 @@ func _unhandled_input(event):
 		expected_roll = true
 	if Input.is_action_just_pressed("attack"):
 		attack()
+	
 		
 func _process(_delta):
+	if get_tree().paused:
+		return
 	camera_pivot.rotation.x = camera_rotation.x  # Pitch
 	camera_pivot.rotation.y = camera_rotation.y  # Yaw
 	hud_hp.text = str(Attack_hurt_time)
+	
 	body.rotation.x = 0
 	if Invincibility > 0.0:
 		Invincibility -= _delta
@@ -59,10 +68,15 @@ func _process(_delta):
 		for area in overlapping_areas:
 			if area.get_parent().is_in_group("enemy"):
 				if area.INVINCIBLE < 0.1:
-					area.hit(Attack_Damage)
+					area.hit(Attack_Damage, self)
+					var particle = SWISH.instantiate()
+					add_child(particle)
+					particle.global_position = area.global_position
 					hit_enemy_sfx.play()
 	
 func _physics_process(delta: float) -> void:
+	if get_tree().paused:
+		return
 	if not is_on_floor():
 		velocity += get_gravity() * 2 * delta
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -88,13 +102,14 @@ func _physics_process(delta: float) -> void:
 	
 func attack():
 	attack_sfx.play()
-	Attack_hurt_time = 0.5
+	Attack_hurt_time = 0.2 # how long the attack is
 	var vfx = SWISH.instantiate()
 	add_child(vfx)
+	vfx.scale = Vector3(0.1, 0.1, 0.1)
 	
 func dodge():
 	expected_roll = false
-	Invincibility = 0.5
+	Invincibility = 0.4
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, camera_pivot.rotation.y).normalized()
 	var horizontal_velocity = direction * SPEED * 2
@@ -106,3 +121,19 @@ func enemy_death(enemy):
 	var vfx = ENEMY_PARTICLES.instantiate()
 	add_child(vfx)
 	vfx.global_position = enemy.global_position
+	
+func win():
+	hud_ending_layer.visible = true
+	get_tree().paused = true
+	
+func toggle_fullscreen():
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+func toggle_pause():
+	get_tree().paused = !get_tree().paused
+	if get_tree().paused:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
