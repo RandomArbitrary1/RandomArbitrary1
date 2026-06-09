@@ -18,8 +18,8 @@ spread = 180.0
 initial_velocity_min = 1.0
 initial_velocity_max = 3.0
 gravity = Vector3(0, 3, 0)
-scale_min = 0.099999994
-scale_max = 0.39999998
+scale_min = 0.04
+scale_max = 0.25
 color = Color(0.39737508, 0.36811474, 0.24400029, 1)
 alpha_curve = SubResource("CurveTexture_ih8je")
 

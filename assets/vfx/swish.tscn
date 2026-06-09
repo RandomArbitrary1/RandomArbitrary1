@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cgjpf2llv2b8d"]
+[gd_scene format=3 uid="uid://c3b1ucalusqio"]
 
-[ext_resource type="Script" uid="uid://b2btudykk8syw" path="res://assets/vfx/explosion.gd" id="1_tsg42"]
+[ext_resource type="Script" uid="uid://bqlsh5bkjpsu0" path="res://assets/vfx/swish.gd" id="1_8evo5"]
 
 [sub_resource type="Curve" id="Curve_8naro"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.3305785, 0), 0.0, 0.0, 0, 0]
@@ -26,10 +26,10 @@ material = SubResource("StandardMaterial3D_tsg42")
 top_radius = 0.1
 bottom_radius = 0.0
 
-[node name="Explosion" type="Node3D" unique_id=856933159]
-script = ExtResource("1_tsg42")
+[node name="Swish" type="Node3D" unique_id=856933159]
+script = ExtResource("1_8evo5")
 
-[node name="Explode" type="GPUParticles3D" parent="." unique_id=816891294]
+[node name="Swish" type="GPUParticles3D" parent="." unique_id=816891294]
 emitting = false
 amount = 24
 one_shot = true

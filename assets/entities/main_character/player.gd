@@ -23,13 +23,13 @@ var expected_roll = false
 @onready var collision = $CollisionShape3D
 @onready var attack_hitbox: Area3D = $BODY/AttackHitbox
 @onready var hit_enemy_sfx: AudioStreamPlayer = $sounds/hit_enemy
-const EXPLOSION = preload("uid://cgjpf2llv2b8d")
+const SWISH = preload("uid://c3b1ucalusqio")
 const SMOKE_STEP = preload("uid://dpfq4acgi117g")
+const ENEMY_PARTICLES = preload("res://assets/vfx/explosion_big.tscn")
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 func attack():
 	attack_sfx.play()
 	Attack_hurt_time = 0.5
-	var vfx = EXPLOSION.instantiate()
+	var vfx = SWISH.instantiate()
 	add_child(vfx)
 	
 func dodge():
@@ -101,3 +101,8 @@ func dodge():
 	velocity.x = horizontal_velocity.x
 	velocity.z = horizontal_velocity.z
 	dodge_sfx.play()
+	
+func enemy_death(enemy):
+	var vfx = ENEMY_PARTICLES.instantiate()
+	add_child(vfx)
+	vfx.global_position = enemy.global_position

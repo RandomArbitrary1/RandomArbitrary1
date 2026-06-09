@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="4_wrj0a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
-sky_top_color = Color(0, 0.45886093, 0.78677654, 1)
-sky_horizon_color = Color(0.30793974, 0.5608204, 0.5474952, 1)
-ground_bottom_color = Color(0.10649627, 0.1894188, 0.20984599, 1)
-ground_horizon_color = Color(0.043216698, 0.3479014, 0.5151003, 1)
+sky_top_color = Color(3.5616756e-06, 0.49695754, 0.6299936, 1)
+sky_horizon_color = Color(0.7075791, 0, 0.14776143, 1)
+sky_curve = 0.5999991
+ground_bottom_color = Color(0.40728292, 0.053694807, 7.219613e-08, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_ivrm4"]
 sky_material = SubResource("ProceduralSkyMaterial_ob7y1")
@@ -42,16 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.013725, 1.4203556, -54.52
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0296822, 0, 2.4034863)
 
 [node name="Enemy" parent="." unique_id=19971874 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.312294, 2.12614, -10.7899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.39091, 2.4054537, -44.08947)
 
-[node name="Enemy2" parent="." unique_id=985758049 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.47807, 2.000021, -29.634136)
-
-[node name="Enemy3" parent="." unique_id=150427213 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.323627, 2.0000114, -42.67212)
-
-[node name="Enemy4" parent="." unique_id=2042355723 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.64988, 2.0000305, 27.047688)
-
-[node name="Enemy5" parent="." unique_id=666475383 instance=ExtResource("4_n5yp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.70558, 2.0737119, -29.792477)
+[node name="Enemy2" parent="." unique_id=2059077444 instance=ExtResource("4_n5yp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.39091, 2.4054537, -66.04416)
