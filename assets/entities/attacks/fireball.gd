@@ -3,7 +3,7 @@ extends Node3D
 @onready var body: Node3D = $"."
 var velocity = Vector3(0,0,5)
 var timer = 0.0
-var speed = 25.0
+var speed = 15.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

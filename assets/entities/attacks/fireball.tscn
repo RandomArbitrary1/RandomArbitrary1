@@ -18,7 +18,7 @@ scale_curve = SubResource("CurveTexture_6f0tp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isgdt"]
 transparency = 1
-albedo_color = Color(0.52679324, 8.5432083e-07, 2.8878452e-07, 0.81960785)
+albedo_color = Color(0.36543277, 0.08452592, 0, 0.81960785)
 metallic_specular = 0.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_6f0tp"]
@@ -63,5 +63,10 @@ volume_db = -5.0
 unit_size = 5.0
 max_db = 0.0
 autoplay = true
-max_distance = 25.0
+max_distance = 31.0
+bus = &"Sounds"
 parameters/looping = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1720568498]
+light_color = Color(0.8511307, 0, 0.17404231, 1)
+omni_range = 15.0

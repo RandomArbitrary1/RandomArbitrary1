@@ -18,6 +18,7 @@ sky_material = SubResource("ProceduralSkyMaterial_ob7y1")
 [sub_resource type="Environment" id="Environment_p2g8j"]
 background_mode = 2
 sky = SubResource("Sky_ivrm4")
+ambient_light_sky_contribution = 0.0
 tonemap_mode = 2
 glow_enabled = true
 
@@ -28,11 +29,12 @@ script = ExtResource("1_wrj0a")
 environment = SubResource("Environment_p2g8j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=460999125]
-transform = Transform3D(-0.8660254, -0.4330128, 0.24999999, 0.49936286, -0.7238087, 0.47616994, -0.025235489, 0.53721595, 0.84306717, 0, 6.717513, 0)
+transform = Transform3D(-0.8660254, -0.4330128, 0.25000003, -0.35362753, 0.88392043, 0.30599388, -0.3534794, 0.17659158, -0.91862273, 0, 39.94703, 0)
+light_energy = 0.2
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1314012681 instance=ExtResource("1_ob7y1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.37108, 20.046387, -54.529583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.0247, 2.8115997, -54.529583)
 
 [node name="protoTerrain" parent="." unique_id=788454551 instance=ExtResource("4_wrj0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0296822, 0, 2.4034863)

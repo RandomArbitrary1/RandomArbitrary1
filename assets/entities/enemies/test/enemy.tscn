@@ -42,3 +42,7 @@ metadata/_custom_type_script = "uid://dthie3q4r5cyx"
 [node name="FireBurst" type="AudioStreamPlayer3D" parent="." unique_id=1744886906]
 stream = ExtResource("6_wwshd")
 max_distance = 45.0
+bus = &"Sounds"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1122967469]
+omni_range = 15.0
