@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bew6v6w872hbb" path="res://assets/sfx/swing.mp3" id="3_hmrda"]
 [ext_resource type="AudioStream" uid="uid://dsa52xvya8a6b" path="res://assets/sfx/enemy_hit.mp3" id="4_hmrda"]
 [ext_resource type="AudioStream" uid="uid://bo2d4x62tvu8x" path="res://assets/music/Q367 Medieval Boss Fight 8.mp3" id="5_01ej1"]
+[ext_resource type="AudioStream" uid="uid://dup3hyrq07u8" path="res://assets/sfx/hurt.mp3" id="5_mlp8l"]
 [ext_resource type="PackedScene" uid="uid://dqtp2hft6j2hd" path="res://assets/entities/main_character/player_model.tscn" id="5_ydyut"]
 [ext_resource type="PackedScene" uid="uid://b2dfqinja0qn2" path="res://assets/ui/health.tscn" id="7_01ej1"]
 
@@ -55,6 +56,10 @@ process_mode = 1
 stream = ExtResource("4_hmrda")
 volume_db = -14.0
 bus = &"Sounds"
+
+[node name="hurt" type="AudioStreamPlayer" parent="sounds" unique_id=261462847]
+stream = ExtResource("5_mlp8l")
+volume_db = -10.0
 
 [node name="music" type="Node" parent="." unique_id=510248783]
 process_mode = 1

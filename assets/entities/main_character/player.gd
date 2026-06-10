@@ -23,6 +23,7 @@ var expected_roll = false
 @onready var collision = $CollisionShape3D
 @onready var attack_hitbox: Area3D = $BODY/AttackHitbox
 @onready var hit_enemy_sfx: AudioStreamPlayer = $sounds/hit_enemy
+@onready var hurt: AudioStreamPlayer = $sounds/hurt
 const SWISH = preload("res://assets/vfx/swish.tscn")
 const SMOKE_STEP = preload("res://assets/vfx/smoke_step.tscn")
 const ENEMY_PARTICLES = preload("res://assets/vfx/explosion_big.tscn")
@@ -122,11 +123,13 @@ func hit(damage):
 	if Invincibility < 0.1:
 		HEALTH -= damage
 		Invincibility = 0.5
+		hurt.play()
 	
 func enemy_death(enemy):
 	var vfx = ENEMY_PARTICLES.instantiate()
 	add_child(vfx)
 	vfx.global_position = enemy.global_position
+	Attack_Damage += 0.5
 	
 func win():
 	get_tree().paused = false
