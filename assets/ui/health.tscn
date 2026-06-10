@@ -1,31 +1,36 @@
 [gd_scene format=3 uid="uid://b2dfqinja0qn2"]
 
+[ext_resource type="Script" uid="uid://cvew8b8cifhlr" path="res://assets/ui/health.gd" id="1_ckbmu"]
+
 [node name="Hud" type="Node2D" unique_id=2090949931]
+script = ExtResource("1_ckbmu")
 
 [node name="strengthlabel" type="Label" parent="." unique_id=1604822089]
-offset_top = 101.0
-offset_right = 216.0
-offset_bottom = 170.0
+offset_right = 402.0
+offset_bottom = 69.0
 theme_override_font_sizes/font_size = 50
 text = "Strength Level = "
 
 [node name="hplabel" type="Label" parent="." unique_id=1320544406]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 21.0
+offset_top = 720.0
+offset_right = 237.0
+offset_bottom = 789.0
 theme_override_font_sizes/font_size = 50
 text = "Health = "
 
 [node name="STR" type="Label" parent="." unique_id=477063205]
-offset_left = 404.0
-offset_top = 104.0
-offset_right = 444.0
-offset_bottom = 173.0
+offset_left = 432.0
+offset_top = 818.0
+offset_right = 461.0
+offset_bottom = 887.0
 theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="HP" type="Label" parent="." unique_id=1299257527]
-offset_left = 213.0
-offset_right = 253.0
-offset_bottom = 69.0
+offset_left = 251.0
+offset_top = 722.0
+offset_right = 291.0
+offset_bottom = 791.0
 theme_override_font_sizes/font_size = 50
 text = "0"

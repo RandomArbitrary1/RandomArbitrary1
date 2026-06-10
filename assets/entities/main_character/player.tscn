@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b2dfqinja0qn2" path="res://assets/ui/health.tscn" id="7_01ej1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qte20"]
-radius = 0.2836914
+radius = 0.2
 height = 1.9074707
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7nud"]
@@ -66,9 +66,11 @@ volume_db = -14.0
 bus = &"Music"
 parameters/looping = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]
-process_mode = 1
+[node name="hitbox" type="Area3D" parent="." unique_id=1738136701]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04626465, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=1067769288]
+process_mode = 1
 shape = SubResource("CapsuleShape3D_qte20")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
@@ -104,3 +106,8 @@ transform = Transform3D(0.4, -6.9938224e-08, 0, 6.9938224e-08, 0.4, 0, 0, 0, 0.4
 process_mode = 1
 
 [node name="Hud" parent="CanvasLayer" unique_id=2090949931 instance=ExtResource("7_01ej1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=572260423]
+process_mode = 1
+shape = SubResource("CapsuleShape3D_qte20")
+debug_color = Color(0, 0.6, 0.69803923, 1)

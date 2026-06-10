@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	player.enemy_death(self)
-	player.win()
+	#player.win()
 	queue_free()
 	
 func fire():

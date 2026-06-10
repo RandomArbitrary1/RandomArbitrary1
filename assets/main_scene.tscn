@@ -22,6 +22,16 @@ ambient_light_sky_contribution = 0.0
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5yp7"]
+transparency = 1
+albedo_color = Color(12.55355, 0, 0, 0.9137255)
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color(0.93333334, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wrj0a"]
+
 [node name="World" type="Node3D" unique_id=1406768218]
 script = ExtResource("1_wrj0a")
 
@@ -62,3 +72,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.23409, 2.4054537, -51.999
 
 [node name="Enemy8" parent="." unique_id=588162260 instance=ExtResource("4_n5yp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.23409, 2.4054537, -73.9543)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=313856514]
+transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 0, -5.111631, 0)
+material_override = SubResource("StandardMaterial3D_n5yp7")
+mesh = SubResource("PlaneMesh_wrj0a")

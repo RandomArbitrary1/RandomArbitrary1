@@ -13,6 +13,7 @@ var Invincibility = 0.0
 var Attack_hurt_time = 0.0
 var char_rotation = 0.0
 var rotation_speed = 13.0
+var roll_countdown = 0.0
 var expected_roll = false
 @onready var body = $BODY
 @onready var camera_pivot = $CameraPivot
@@ -45,6 +46,8 @@ func _unhandled_input(event):
 		expected_roll = true
 	if Input.is_action_just_pressed("attack"):
 		attack()
+	if Input.is_action_just_pressed("fullscreen"):
+		toggle_fullscreen()
 	
 		
 func _process(_delta):
@@ -52,14 +55,14 @@ func _process(_delta):
 		return
 	camera_pivot.rotation.x = camera_rotation.x  # Pitch
 	camera_pivot.rotation.y = camera_rotation.y  # Yaw
-	
-	body.rotation.x = 0
 	if Invincibility > 0.0:
 		Invincibility -= _delta
+	body.rotation.x = 0
+	if roll_countdown > 0.0:
+		roll_countdown -= _delta
 		body.rotation.x = 1
 	
 	if Attack_hurt_time > 0.0:
-		
 		Attack_hurt_time -= _delta
 		var overlapping_areas = attack_hitbox.get_overlapping_areas()
 		for area in overlapping_areas:
@@ -80,7 +83,7 @@ func _physics_process(delta: float) -> void:
 	var cam_y_rotation = camera_pivot.rotation.y
 	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, cam_y_rotation).normalized()
 	var target_velocity = direction * SPEED
-	if Invincibility < 0.1:
+	if roll_countdown < 0.1:
 		if expected_roll:
 			dodge()
 	if direction.length() > 0.01:
@@ -107,12 +110,18 @@ func attack():
 func dodge():
 	expected_roll = false
 	Invincibility = 0.4
+	roll_countdown = 0.4
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3.UP, camera_pivot.rotation.y).normalized()
 	var horizontal_velocity = direction * SPEED * 2
 	velocity.x = horizontal_velocity.x
 	velocity.z = horizontal_velocity.z
 	dodge_sfx.play()
+	
+func hit(damage):
+	if Invincibility < 0.1:
+		HEALTH -= damage
+		Invincibility = 0.5
 	
 func enemy_death(enemy):
 	var vfx = ENEMY_PARTICLES.instantiate()

@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bctrva4k4cmnx" path="res://assets/sfx/fire_burst.mp3" id="6_wwshd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_re45t"]
+radius = 0.3
 height = 1.7290039
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_re45t"]
