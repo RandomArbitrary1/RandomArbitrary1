@@ -63,7 +63,7 @@ process_mode = 1
 process_mode = 1
 stream = ExtResource("5_01ej1")
 volume_db = -14.0
-autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1067769288]

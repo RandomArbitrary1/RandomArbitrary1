@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://cyxgb36w8kf61" path="res://assets/entities/enemies/test/enemy.gd" id="1_re45t"]
 [ext_resource type="Script" uid="uid://ca3ts3n2g8mvm" path="res://assets/entities/enemies/test/hitbox.gd" id="2_8u0gq"]
 [ext_resource type="PackedScene" uid="uid://dfaxkoyjmlvgr" path="res://assets/entities/enemies/test/wooden_enemy.fbx" id="2_w45v6"]
-[ext_resource type="Script" uid="uid://dltay6mbvhipk" path="res://assets/statemach.gd" id="3_564b3"]
-[ext_resource type="Script" uid="uid://dthie3q4r5cyx" path="res://assets/scripts/EnemyIdle.gd" id="4_w45v6"]
+[ext_resource type="Script" uid="uid://bgewp7yy7jvce" path="res://assets/entities/enemies/test/state_behaviour.gd" id="4_w45v6"]
 [ext_resource type="AudioStream" uid="uid://bctrva4k4cmnx" path="res://assets/sfx/fire_burst.mp3" id="6_wwshd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_re45t"]
@@ -31,13 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107421875, 0.31658936, -0
 shape = SubResource("BoxShape3D_re45t")
 debug_color = Color(1, 1, 0, 1)
 
-[node name="statemach" type="Node" parent="." unique_id=1681802564 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("3_564b3")
-initial_state = NodePath("EnemyIdle")
-
-[node name="EnemyIdle" type="Node" parent="statemach" unique_id=1379603065]
+[node name="StateBehaviour" type="Node" parent="." unique_id=1681802564]
 script = ExtResource("4_w45v6")
-metadata/_custom_type_script = "uid://dthie3q4r5cyx"
 
 [node name="FireBurst" type="AudioStreamPlayer3D" parent="." unique_id=1744886906]
 stream = ExtResource("6_wwshd")

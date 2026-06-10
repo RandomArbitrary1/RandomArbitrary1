@@ -17,8 +17,6 @@ var expected_roll = false
 @onready var body = $BODY
 @onready var camera_pivot = $CameraPivot
 @onready var camera_arm = $CameraPivot/CameraArm
-@onready var hud_hp = $CanvasLayer/Hud/HP
-@onready var hud_ending_layer = $CanvasLayer/Hud/End
 @onready var dodge_sfx = $sounds/dodge
 @onready var attack_sfx: AudioStreamPlayer = $sounds/attack
 @onready var collision = $CollisionShape3D
@@ -27,7 +25,7 @@ var expected_roll = false
 const SWISH = preload("res://assets/vfx/swish.tscn")
 const SMOKE_STEP = preload("res://assets/vfx/smoke_step.tscn")
 const ENEMY_PARTICLES = preload("res://assets/vfx/explosion_big.tscn")
-
+const ending_scene = preload("res://assets/end_scene.tscn")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -54,7 +52,6 @@ func _process(_delta):
 		return
 	camera_pivot.rotation.x = camera_rotation.x  # Pitch
 	camera_pivot.rotation.y = camera_rotation.y  # Yaw
-	hud_hp.text = str(Attack_hurt_time)
 	
 	body.rotation.x = 0
 	if Invincibility > 0.0:
@@ -123,8 +120,9 @@ func enemy_death(enemy):
 	vfx.global_position = enemy.global_position
 	
 func win():
-	hud_ending_layer.visible = true
-	get_tree().paused = true
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://assets/end_scene.tscn")
+	
 	
 func toggle_fullscreen():
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
