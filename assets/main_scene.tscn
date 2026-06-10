@@ -44,7 +44,7 @@ light_energy = 0.2
 shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1314012681 instance=ExtResource("1_ob7y1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.0247, 2.8115997, -54.529583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.0247, 2.8115997, -37.815384)
 
 [node name="protoTerrain" parent="." unique_id=788454551 instance=ExtResource("4_wrj0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0296822, 0, 2.4034863)

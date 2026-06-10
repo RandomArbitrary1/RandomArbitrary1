@@ -5,32 +5,66 @@
 [node name="Hud" type="Node2D" unique_id=2090949931]
 script = ExtResource("1_ckbmu")
 
-[node name="strengthlabel" type="Label" parent="." unique_id=1604822089]
-offset_right = 402.0
-offset_bottom = 69.0
-theme_override_font_sizes/font_size = 50
-text = "Strength Level = "
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=407210717]
 
-[node name="hplabel" type="Label" parent="." unique_id=1320544406]
-offset_left = 21.0
-offset_top = 720.0
-offset_right = 237.0
-offset_bottom = 789.0
-theme_override_font_sizes/font_size = 50
-text = "Health = "
+[node name="HPBackground" type="ColorRect" parent="CanvasLayer" unique_id=246374821]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 21.0
+offset_right = -136.0
+offset_bottom = 71.0
+grow_horizontal = 2
+color = Color(0.6578435, 0, 0.24478832, 1)
 
-[node name="STR" type="Label" parent="." unique_id=477063205]
-offset_left = 432.0
-offset_top = 818.0
-offset_right = 461.0
-offset_bottom = 887.0
+[node name="HPBar" type="ColorRect" parent="CanvasLayer" unique_id=1321164954]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -186.0
+offset_top = 21.0
+offset_right = -136.0
+offset_bottom = 71.0
+grow_horizontal = 2
+color = Color(0.9903701, 0.8261308, 0, 1)
+
+[node name="HP" type="Label" parent="CanvasLayer" unique_id=1299257527]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 10.0
+offset_right = -124.0
+offset_bottom = 79.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="HP" type="Label" parent="." unique_id=1299257527]
-offset_left = 251.0
-offset_top = 722.0
-offset_right = 291.0
-offset_bottom = 791.0
+[node name="hplabel" type="Label" parent="CanvasLayer" unique_id=1320544406]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.0
+offset_top = 11.0
+offset_right = -166.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Health"
+
+[node name="strengthlabel" type="Label" parent="CanvasLayer" unique_id=1604822089]
+offset_left = 26.0
+offset_top = 817.0
+offset_right = 428.0
+offset_bottom = 886.0
+theme_override_font_sizes/font_size = 50
+text = "Damage Level x"
+
+[node name="STR" type="Label" parent="CanvasLayer" unique_id=477063205]
+offset_left = 406.0
+offset_top = 818.0
+offset_right = 435.0
+offset_bottom = 887.0
 theme_override_font_sizes/font_size = 50
 text = "0"
