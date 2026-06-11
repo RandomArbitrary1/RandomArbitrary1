@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqs241tew4vs2" path="res://assets/entities/enemies/test/enemy.tscn" id="4_n5yp7"]
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="4_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://cpxlq2l4s0g03" path="res://assets/objects/mesh_instance_3d.tscn" id="5_wrj0a"]
+[ext_resource type="PackedScene" uid="uid://coqhc3hbdf7my" path="res://assets/objects/background_structures.tscn" id="6_ofx00"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(3.5616756e-06, 0.49695754, 0.6299936, 1)
@@ -30,7 +31,7 @@ script = ExtResource("1_wrj0a")
 environment = SubResource("Environment_p2g8j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=460999125]
-transform = Transform3D(-0.8660254, -0.4330128, 0.25000003, -0.35362753, 0.88392043, 0.30599388, -0.3534794, 0.17659158, -0.91862273, 0, 39.94703, 0)
+transform = Transform3D(-0.8660253, -0.43301272, 0.24999997, -0.195205, 0.75312775, 0.6282462, -0.4603206, 0.49527586, -0.736754, 0, 39.94703, 0)
 light_energy = 0.2
 shadow_enabled = true
 
@@ -66,3 +67,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.23409, 2.4054537, -73.954
 
 [node name="MeshInstance3D" parent="." unique_id=1587463833 instance=ExtResource("5_wrj0a")]
 transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 0, -5.111631, 0)
+
+[node name="BackgroundStructures" parent="." unique_id=818514596 instance=ExtResource("6_ofx00")]
+transform = Transform3D(4.74, 0, 0, 0, 4.74, 0, 0, 0, 4.74, 0, 31.915, 0)

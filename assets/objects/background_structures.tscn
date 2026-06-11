@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://coqhc3hbdf7my"]
+
+[ext_resource type="Texture2D" uid="uid://bnpfpg6b4eykd" path="res://assets/objects/alexantropov86-volcano-7104380.png" id="1_4i5yn"]
+[ext_resource type="Texture2D" uid="uid://o28p5r1glvqn" path="res://assets/objects/volcano_PNG40.png" id="2_aagy1"]
+
+[node name="BackgroundStructures" type="Node3D" unique_id=818514596]
+
+[node name="Volcano1" type="Sprite3D" parent="." unique_id=1308982932]
+transform = Transform3D(4.836266, 0, -0.6883025, 0, 4.885, 0, 0.6883025, 0, 4.836266, 43.271286, 12.173531, -113.92751)
+texture = ExtResource("1_4i5yn")
+
+[node name="Volcano3" type="Sprite3D" parent="." unique_id=846732941]
+transform = Transform3D(3.5560544, 0, -2.000219, 0, 4.08, 0, 2.000219, 0, 3.5560544, -27.34354, 12.173531, 95.793274)
+texture = ExtResource("1_4i5yn")
+
+[node name="Volcano2" type="Sprite3D" parent="." unique_id=772649335]
+transform = Transform3D(0.38454923, 0, -14.174785, 0, 26.35, 0, 14.174785, 0, 0.38454923, 133.963, 40.709, -0.543)
+texture = ExtResource("2_aagy1")
+
+[node name="Volcano4" type="Sprite3D" parent="." unique_id=117344705]
+transform = Transform3D(10.33987, 0, 4.66863, 0, 11.345, 0, -4.66863, 0, 10.33987, -158.52612, 39.215736, -292.7729)
+texture = ExtResource("1_4i5yn")
+
+[node name="Volcano5" type="Sprite3D" parent="." unique_id=1070173028]
+transform = Transform3D(7.657875, 0, 3.9356132, 0, 8.61, 0, -3.9356132, 0, 7.657875, 116.21883, 39.215736, 139.78009)
+texture = ExtResource("1_4i5yn")
+
+[node name="Volcano6" type="Sprite3D" parent="." unique_id=1530791397]
+transform = Transform3D(4.2257133, 0, -24.721441, 0, 46.605, 0, 24.721441, 0, 4.2257133, -165.09695, 77.97554, 49.310867)
+texture = ExtResource("2_aagy1")

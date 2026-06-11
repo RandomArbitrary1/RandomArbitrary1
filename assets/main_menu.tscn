@@ -1,8 +1,10 @@
-[gd_scene format=3 uid="uid://cv2vh2qi6pam"]
+[gd_scene format=3 uid="uid://cr0jgp0ead7y4"]
 
 [ext_resource type="PackedScene" uid="uid://cpxlq2l4s0g03" path="res://assets/objects/mesh_instance_3d.tscn" id="2_udhl6"]
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="3_fpdlq"]
-[ext_resource type="Script" uid="uid://80bpaiqdbtsw" path="res://assets/scripts/menu.gd" id="4_0quft"]
+[ext_resource type="Script" path="res://assets/scripts/menu.gd" id="4_0quft"]
+[ext_resource type="Texture2D" uid="uid://ctfxwtq1u3mdf" path="res://assets/ui/Muspelheim-6-11-2026.png" id="4_dtgnq"]
+[ext_resource type="PackedScene" uid="uid://coqhc3hbdf7my" path="res://assets/objects/background_structures.tscn" id="5_dtgnq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(3.5616756e-06, 0.49695754, 0.6299936, 1)
@@ -27,7 +29,7 @@ glow_enabled = true
 environment = SubResource("Environment_p2g8j")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1976266332]
-transform = Transform3D(0.6690866, 0.12699516, -0.7322536, -0.07776302, 0.9918466, 0.10096162, 0.73910487, -0.01060982, 0.6735068, 6.1874504, 14.011787, -24.501188)
+transform = Transform3D(0.6690866, 0.12699516, -0.7322536, -0.07776302, 0.9918466, 0.100961626, 0.73910487, -0.010609815, 0.6735068, -7.247162, 14.70689, 82.878395)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=460999125]
 transform = Transform3D(-0.8660254, -0.4330128, 0.25000003, -0.35362753, 0.88392043, 0.30599388, -0.3534794, 0.17659158, -0.91862273, 0, 39.94703, 0)
@@ -47,12 +49,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -242.0
-offset_top = -65.0
+offset_top = 50.0
 offset_right = 242.0
-offset_bottom = 65.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_0quft")
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer" unique_id=389643232]
+position = Vector2(236, -312)
+texture = ExtResource("4_dtgnq")
 
 [node name="Start button" type="Button" parent="VBoxContainer" unique_id=969563108]
 layout_mode = 2
@@ -63,6 +69,9 @@ text = "Start game"
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="BackgroundStructures" parent="." unique_id=818514596 instance=ExtResource("5_dtgnq")]
+transform = Transform3D(4.74, 0, 0, 0, 4.74, 0, 0, 0, 4.74, 0, 31, 0)
 
 [connection signal="pressed" from="VBoxContainer/Start button" to="VBoxContainer" method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit button" to="VBoxContainer" method="_on_quit_button_pressed"]
