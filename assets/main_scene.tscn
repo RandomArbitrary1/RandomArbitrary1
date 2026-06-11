@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cb5tltabg15vd"]
 
 [ext_resource type="PackedScene" uid="uid://qotj2tagmijk" path="res://assets/entities/main_character/player.tscn" id="1_ob7y1"]
-[ext_resource type="Script" uid="uid://ws1g1bnaerl3" path="res://assets/scripts/State.gd" id="1_wrj0a"]
+[ext_resource type="Script" uid="uid://dicph4aux8rr1" path="res://assets/scripts/State.gd" id="1_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://cqs241tew4vs2" path="res://assets/entities/enemies/test/enemy.tscn" id="4_n5yp7"]
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="4_wrj0a"]
+[ext_resource type="PackedScene" uid="uid://cpxlq2l4s0g03" path="res://assets/objects/mesh_instance_3d.tscn" id="5_wrj0a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(3.5616756e-06, 0.49695754, 0.6299936, 1)
@@ -21,16 +22,6 @@ sky = SubResource("Sky_ivrm4")
 ambient_light_sky_contribution = 0.0
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5yp7"]
-transparency = 1
-albedo_color = Color(12.55355, 0, 0, 0.9137255)
-metallic_specular = 0.0
-emission_enabled = true
-emission = Color(0.93333334, 0, 0, 1)
-emission_energy_multiplier = 16.0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_wrj0a"]
 
 [node name="World" type="Node3D" unique_id=1406768218]
 script = ExtResource("1_wrj0a")
@@ -73,7 +64,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.23409, 2.4054537, -51.999
 [node name="Enemy8" parent="." unique_id=588162260 instance=ExtResource("4_n5yp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.23409, 2.4054537, -73.9543)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=313856514]
+[node name="MeshInstance3D" parent="." unique_id=1587463833 instance=ExtResource("5_wrj0a")]
 transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 0, -5.111631, 0)
-material_override = SubResource("StandardMaterial3D_n5yp7")
-mesh = SubResource("PlaneMesh_wrj0a")

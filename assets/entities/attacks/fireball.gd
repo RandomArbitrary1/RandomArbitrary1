@@ -8,12 +8,11 @@ var speed = 15.0
 var player = false
 var damage = 5.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	red_smoke.emitting = true
 	player = get_tree().get_first_node_in_group("player")
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	#area_3d.body_entered.connect(_on_body_entered)
+
 func _process(delta: float) -> void:
 	timer += delta
 	body.position += body.basis.z * speed * delta
@@ -21,5 +20,10 @@ func _process(delta: float) -> void:
 	for area in overlapping_areas:
 		if area.get_parent().is_in_group("player"):
 			player.hit(damage)
+			queue_free()  
+			return        
 	if timer > 9:
 		queue_free()
+
+#func _on_body_entered(body_hit: Node) -> void:
+	#queue_free()

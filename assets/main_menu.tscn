@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cv2vh2qi6pam"]
 
+[ext_resource type="PackedScene" uid="uid://cpxlq2l4s0g03" path="res://assets/objects/mesh_instance_3d.tscn" id="2_udhl6"]
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="3_fpdlq"]
 [ext_resource type="Script" uid="uid://80bpaiqdbtsw" path="res://assets/scripts/menu.gd" id="4_0quft"]
 
@@ -20,20 +21,13 @@ ambient_light_sky_contribution = 0.0
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5yp7"]
-transparency = 1
-albedo_color = Color(12.55355, 0, 0, 0.9137255)
-metallic_specular = 0.0
-emission_enabled = true
-emission = Color(0.93333334, 0, 0, 1)
-emission_energy_multiplier = 16.0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_wrj0a"]
-
-[node name="World" type="Node3D" unique_id=1406768218]
+[node name="World" type="Node3D" unique_id=1406768218 groups=["lava"]]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1102092192]
 environment = SubResource("Environment_p2g8j")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1976266332]
+transform = Transform3D(0.6690866, 0.12699516, -0.7322536, -0.07776302, 0.9918466, 0.10096162, 0.73910487, -0.01060982, 0.6735068, 6.1874504, 14.011787, -24.501188)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=460999125]
 transform = Transform3D(-0.8660254, -0.4330128, 0.25000003, -0.35362753, 0.88392043, 0.30599388, -0.3534794, 0.17659158, -0.91862273, 0, 39.94703, 0)
@@ -43,13 +37,8 @@ shadow_enabled = true
 [node name="protoTerrain" parent="." unique_id=788454551 instance=ExtResource("3_fpdlq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0296822, -3.18779, 2.4034863)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=313856514]
-transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 0, -5.111631, 0)
-material_override = SubResource("StandardMaterial3D_n5yp7")
-mesh = SubResource("PlaneMesh_wrj0a")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1976266332]
-transform = Transform3D(0.6721532, 0.12104921, -0.73045003, -0.07449638, 0.99259555, 0.095940754, 0.736655, -0.010070986, 0.67619395, 19.182003, 14.011787, -24.501188)
+[node name="MeshInstance3D" parent="." unique_id=1587463833 instance=ExtResource("2_udhl6")]
+transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 8.679424, -5.6031876, 11.97607)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=695121026]
 anchors_preset = 8

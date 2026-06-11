@@ -74,6 +74,7 @@ func _process(_delta):
 					add_child(particle)
 					particle.global_position = area.global_position
 					hit_enemy_sfx.play()
+
 	
 func _physics_process(delta: float) -> void:
 	if get_tree().paused:
