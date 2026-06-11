@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cb5tltabg15vd"]
 
 [ext_resource type="PackedScene" uid="uid://qotj2tagmijk" path="res://assets/entities/main_character/player.tscn" id="1_ob7y1"]
-[ext_resource type="Script" path="res://assets/scripts/State.gd" id="1_wrj0a"]
+[ext_resource type="Script" uid="uid://dicph4aux8rr1" path="res://assets/scripts/State.gd" id="1_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://cqs241tew4vs2" path="res://assets/entities/enemies/test/enemy.tscn" id="4_n5yp7"]
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="4_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://cpxlq2l4s0g03" path="res://assets/objects/mesh_instance_3d.tscn" id="5_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://coqhc3hbdf7my" path="res://assets/objects/background_structures.tscn" id="6_ofx00"]
+[ext_resource type="PackedScene" uid="uid://gd8xcageq4o5" path="res://assets/entities/boss/boss.tscn" id="7_k5typ"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(3.5616756e-06, 0.49695754, 0.6299936, 1)
@@ -70,3 +71,6 @@ transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 0, -5.111631, 0)
 
 [node name="BackgroundStructures" parent="." unique_id=818514596 instance=ExtResource("6_ofx00")]
 transform = Transform3D(4.74, 0, 0, 0, 4.74, 0, 0, 0, 4.74, 0, 31.915, 0)
+
+[node name="Boss" parent="." unique_id=1464837283 instance=ExtResource("7_k5typ")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.39199, 44.86316, 1.9343796)
