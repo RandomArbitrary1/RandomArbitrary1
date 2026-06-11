@@ -13,6 +13,15 @@
 radius = 0.2
 height = 1.9074707
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlp8l"]
+transparency = 1
+albedo_color = Color(2.7075353, 0, 0, 0.54509807)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fa56j"]
+material = SubResource("StandardMaterial3D_mlp8l")
+radius = 0.25
+height = 1.8
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7nud"]
 size = Vector3(3, 2.1724854, 3)
 
@@ -67,7 +76,8 @@ process_mode = 1
 [node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
 process_mode = 1
 stream = ExtResource("5_01ej1")
-volume_db = -14.0
+volume_db = -10.0
+autoplay = true
 bus = &"Music"
 parameters/looping = true
 
@@ -85,6 +95,10 @@ omni_range = 5.9939713
 
 [node name="BODY" type="Node3D" parent="." unique_id=841542711]
 process_mode = 1
+
+[node name="hurt_notify" type="MeshInstance3D" parent="BODY" unique_id=16955456]
+transform = Transform3D(1, 0, 0, 0, 0.89795053, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_fa56j")
 
 [node name="AttackHitbox" type="Area3D" parent="BODY" unique_id=1145650273]
 process_mode = 1

@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://cr0jgp0ead7y4"]
 
+[ext_resource type="Script" uid="uid://te1s23tbijei" path="res://assets/main_menu.gd" id="1_lw4iv"]
 [ext_resource type="PackedScene" uid="uid://cpxlq2l4s0g03" path="res://assets/objects/mesh_instance_3d.tscn" id="2_udhl6"]
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="3_fpdlq"]
 [ext_resource type="Script" path="res://assets/scripts/menu.gd" id="4_0quft"]
 [ext_resource type="Texture2D" uid="uid://ctfxwtq1u3mdf" path="res://assets/ui/Muspelheim-6-11-2026.png" id="4_dtgnq"]
 [ext_resource type="PackedScene" uid="uid://coqhc3hbdf7my" path="res://assets/objects/background_structures.tscn" id="5_dtgnq"]
+[ext_resource type="AudioStream" uid="uid://du4nhyl54w0j2" path="res://assets/music/Shadow Fight 2 Underworld Boss Volcano Theme _Underworld Demon_ ___ 𝐋𝐢𝐧𝐝 𝐄𝐫𝐞𝐛𝐫𝐨𝐬 ___ [VrNULh9UKhk].mp3" id="6_fpdlq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ob7y1"]
 sky_top_color = Color(3.5616756e-06, 0.49695754, 0.6299936, 1)
@@ -24,6 +26,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1406768218 groups=["lava"]]
+script = ExtResource("1_lw4iv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1102092192]
 environment = SubResource("Environment_p2g8j")
@@ -72,6 +75,31 @@ text = "Quit"
 
 [node name="BackgroundStructures" parent="." unique_id=818514596 instance=ExtResource("5_dtgnq")]
 transform = Transform3D(4.74, 0, 0, 0, 4.74, 0, 0, 0, 4.74, 0, 31, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1934542483]
+
+[node name="Instructions" type="Label" parent="CanvasLayer" unique_id=1772070831]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -285.0
+offset_right = 839.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "WASD to move
+Space/Ctrl to dodge
+Left mouse click to attack
+
+F4/alt+enter to fullscreen
+Esc to pause"
+
+[node name="music theme" type="AudioStreamPlayer" parent="." unique_id=1429695726]
+stream = ExtResource("6_fpdlq")
+volume_db = -10.335
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Start button" to="VBoxContainer" method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit button" to="VBoxContainer" method="_on_quit_button_pressed"]

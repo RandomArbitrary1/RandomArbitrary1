@@ -66,12 +66,11 @@ func _physics_process(delta: float) -> void:
 			fire(false)
 			fireball_timer = fireball_interval
 			
-		if not is_minigun_firing and randi_range(1, 1500) == 1:
-			print("GOOOOOOOOOOO")
+		if not is_minigun_firing and randi_range(1, 150) == 1:
 			start_minigun_attack()
 
 		# Rare spin and shoot everywhere
-		if not is_spinning and randi_range(1, 1000) == 1:
+		if not is_spinning and randi_range(1, 100) == 1:
 			start_spin()
 
 		if is_spinning:
@@ -80,10 +79,8 @@ func _physics_process(delta: float) -> void:
 		# Handle minigun firing
 		if is_minigun_firing:
 			minigun_timer -= delta
-			print(currentenemy)
 			if minigun_timer <= 0 and minigun_shots_fired < max_minigun_shots and currentenemy != null:
 				shoot_at_player()
-				print(minigun_shots_fired)
 				minigun_shots_fired += 1
 				minigun_timer = minigun_fire_rate
 			elif minigun_shots_fired >= max_minigun_shots:
