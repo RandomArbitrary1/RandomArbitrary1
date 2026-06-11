@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cb5tltabg15vd"]
 
 [ext_resource type="PackedScene" uid="uid://qotj2tagmijk" path="res://assets/entities/main_character/player.tscn" id="1_ob7y1"]
-[ext_resource type="Script" uid="uid://dicph4aux8rr1" path="res://assets/scripts/State.gd" id="1_wrj0a"]
+[ext_resource type="Script" path="res://assets/scripts/State.gd" id="1_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://cqs241tew4vs2" path="res://assets/entities/enemies/test/enemy.tscn" id="4_n5yp7"]
 [ext_resource type="PackedScene" uid="uid://d10tsnnws4hmc" path="res://assets/levels/map.tscn" id="4_wrj0a"]
 [ext_resource type="PackedScene" uid="uid://cpxlq2l4s0g03" path="res://assets/objects/mesh_instance_3d.tscn" id="5_wrj0a"]

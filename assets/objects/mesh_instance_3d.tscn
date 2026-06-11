@@ -13,17 +13,16 @@ emission_energy_multiplier = 16.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_wrj0a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ya82h"]
-size = Vector3(2.0443802, 1, 2.011345)
+size = Vector3(2.0443802, 0.03755214, 2.011345)
 
 [node name="MeshInstance3D" type="MeshInstance3D" unique_id=1587463833]
-transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 0, -21.990814, 0)
+transform = Transform3D(999, 0, 0, 0, 999, 0, 0, 0, 999, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_n5yp7")
 mesh = SubResource("PlaneMesh_wrj0a")
 script = ExtResource("1_qkyld")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1353143888]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21979038, -0.40495402, 0.10713049)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=659850908]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21598424, -0.06684318, -0.080409996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.018929176, 0)
 shape = SubResource("BoxShape3D_ya82h")
