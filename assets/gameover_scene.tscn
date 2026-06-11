@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://b3swqsbx1kt1k"]
+
+[ext_resource type="AudioStream" uid="uid://drke62edotf6h" path="res://assets/music/Ending Theme - Super Mario_ World [waKumDkYrDY].mp3" id="1_7c72k"]
+[ext_resource type="Texture2D" uid="uid://4b3xwmhug6yk" path="res://assets/ui/Muspelheim.webp" id="2_7c72k"]
+[ext_resource type="Script" uid="uid://80bpaiqdbtsw" path="res://assets/scripts/menu.gd" id="3_7c72k"]
+
+[node name="Node3D" type="Node3D" unique_id=2116627818]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1591684379]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.43588945, -0.4088841, 0.801757, -0.24494995, 0.8033142, 0.5428497, 0, 4.750181, 0)
+shadow_enabled = true
+
+[node name="End" type="Node2D" parent="." unique_id=100523603]
+
+[node name="endingmusic" type="AudioStreamPlayer" parent="." unique_id=987286500]
+stream = ExtResource("1_7c72k")
+volume_db = -9.689
+autoplay = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1608536567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.3307495)
+
+[node name="background" type="Sprite3D" parent="." unique_id=1041112678]
+transform = Transform3D(3.835, 0, 0, 0, 4.679, 0, 0, 0, 3.835, 0, 0, -25.510275)
+texture = ExtResource("2_7c72k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=101308986]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.60800004
+anchor_right = 0.5
+anchor_bottom = 0.60800004
+offset_left = -393.5
+offset_top = -189.20001
+offset_right = 393.5
+offset_bottom = 310.8
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_7c72k")
+
+[node name="retrybutton" type="Button" parent="VBoxContainer" unique_id=1739730308]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7529412, 0, 0, 1)
+theme_override_font_sizes/font_size = 150
+text = "Retry"
+flat = true
+
+[node name="quitgame" type="Button" parent="VBoxContainer" unique_id=1548780232]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7529412, 0, 0, 1)
+theme_override_font_sizes/font_size = 150
+text = "Quit Game"
+flat = true
+
+[node name="Label" type="Label" parent="." unique_id=107218025]
+offset_left = 257.0
+offset_top = -62.0
+offset_right = 1382.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.7529412, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.7647059, 0.33333334, 0, 1)
+theme_override_font_sizes/font_size = 250
+text = "You died"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/retrybutton" to="VBoxContainer" method="_on_retrybutton_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitgame" to="VBoxContainer" method="_on_quitgame_pressed"]

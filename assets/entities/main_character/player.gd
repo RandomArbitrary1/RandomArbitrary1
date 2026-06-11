@@ -84,8 +84,13 @@ func _process(_delta):
 					add_child(particle)
 					particle.global_position = area.global_position
 					hit_enemy_sfx.play()
+	if HEALTH < 0.1:
+		playerdead()
 
-	
+func playerdead():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://assets/gameover_scene.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 func _physics_process(delta: float) -> void:
 	if get_tree().paused:
 		return

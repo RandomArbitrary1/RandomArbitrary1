@@ -187,5 +187,5 @@ func shoot_at_player():
 	# Set the fireball to look at the target in the direction of shooting
 	var target_position = fireball.global_position + direction_with_accuracy
 	fireball.look_at(target_position, Vector3.UP)
-	fireball.damage = 10
+	fireball.damage = 5
 	fireball.speed = 20
