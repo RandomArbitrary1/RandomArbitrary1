@@ -13,15 +13,6 @@
 radius = 0.2
 height = 1.9074707
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlp8l"]
-transparency = 1
-albedo_color = Color(2.7075353, 0, 0, 0.54509807)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_fa56j"]
-material = SubResource("StandardMaterial3D_mlp8l")
-radius = 0.25
-height = 1.8
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7nud"]
 size = Vector3(3, 2.1724854, 3)
 
@@ -31,6 +22,15 @@ albedo_color = Color(1, 1, 0, 0.019607844)
 
 [sub_resource type="BoxMesh" id="BoxMesh_01ej1"]
 size = Vector3(3.17, 2.445, 2.97)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlp8l"]
+transparency = 1
+albedo_color = Color(1.5565991, 0.032523114, 0, 0.80784315)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fa56j"]
+material = SubResource("StandardMaterial3D_mlp8l")
+radius = 0.63
+height = 2.335
 
 [node name="Player" type="CharacterBody3D" unique_id=1314012681 groups=["player"]]
 process_mode = 3
@@ -76,7 +76,7 @@ process_mode = 1
 [node name="BossFight" type="AudioStreamPlayer" parent="music" unique_id=1953182132]
 process_mode = 1
 stream = ExtResource("5_01ej1")
-volume_db = -10.0
+volume_db = -14.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
@@ -95,10 +95,6 @@ omni_range = 5.9939713
 
 [node name="BODY" type="Node3D" parent="." unique_id=841542711]
 process_mode = 1
-
-[node name="hurt_notify" type="MeshInstance3D" parent="BODY" unique_id=16955456]
-transform = Transform3D(1, 0, 0, 0, 0.89795053, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_fa56j")
 
 [node name="AttackHitbox" type="Area3D" parent="BODY" unique_id=1145650273]
 process_mode = 1
@@ -120,6 +116,11 @@ mesh = SubResource("BoxMesh_01ej1")
 [node name="knight" parent="BODY" unique_id=1206638180 instance=ExtResource("5_ydyut")]
 process_mode = 1
 transform = Transform3D(0.4, -6.9938224e-08, 0, 6.9938224e-08, 0.4, 0, 0, 0, 0.4, 0, -0.9789928, 0)
+
+[node name="hurt_notify" type="MeshInstance3D" parent="BODY" unique_id=241220458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12648034, 0.23942947)
+visible = false
+mesh = SubResource("CapsuleMesh_fa56j")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1050892432]
 process_mode = 1

@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="GameJam2026"
-run/main_scene="uid://cv2vh2qi6pam"
+run/main_scene="uid://cr0jgp0ead7y4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [audio]
 
 buses/default_bus_layout="uid://dnd511fb4jga"
+
+[debug]
+
+gdscript/warnings/confusable_capture_reassignment=0
 
 [display]
 

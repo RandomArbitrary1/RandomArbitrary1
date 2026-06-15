@@ -44,4 +44,6 @@ omni_range = 15.0
 
 [node name="HpLabel" type="Label3D" parent="." unique_id=1237360684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3441257, 0)
-pixel_size = 0.05
+pixel_size = 0.025
+billboard = 1
+font_size = 64

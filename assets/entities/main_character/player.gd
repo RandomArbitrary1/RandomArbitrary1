@@ -26,14 +26,18 @@ var got_hurt = false
 @onready var hit_enemy_sfx: AudioStreamPlayer = $sounds/hit_enemy
 @onready var hurt: AudioStreamPlayer = $sounds/hurt
 @onready var hurt_notify: MeshInstance3D = $BODY/hurt_notify
+@onready var idleanim: AnimationPlayer = $BODY/knight/Animations/idle
+@onready var runanim: AnimationPlayer = $BODY/knight/Animations/run
+@onready var dashanim: AnimationPlayer = $BODY/knight/Animations/dash
+@onready var attackanim: AnimationPlayer = $BODY/knight/Animations/attack
 
 const SWISH = preload("res://assets/vfx/swish.tscn")
 const SMOKE_STEP = preload("res://assets/vfx/smoke_step.tscn")
 const ENEMY_PARTICLES = preload("res://assets/vfx/explosion_big.tscn")
 const ending_scene = preload("res://assets/end_scene.tscn")
 const MAGIC = preload("res://assets/vfx/magic.tscn")
-
-
+var playanim = "idle"
+@onready var knight: Node3D = $BODY/knight
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -59,14 +63,15 @@ func _unhandled_input(event):
 func _process(_delta):
 	if get_tree().paused:
 		return
+	HEALTH += _delta
+	if HEALTH > 100.0:
+		HEALTH = 100.0
 	camera_pivot.rotation.x = camera_rotation.x  # Pitch
 	camera_pivot.rotation.y = camera_rotation.y  # Yaw
 	if Invincibility > 0.0:
 		Invincibility -= _delta
-	body.rotation.x = 0
 	if roll_countdown > 0.0:
 		roll_countdown -= _delta
-		body.rotation.x = 1
 	if Invincibility > 0.0:
 		if got_hurt:
 			hurt_notify.visible = true
@@ -86,6 +91,19 @@ func _process(_delta):
 					hit_enemy_sfx.play()
 	if HEALTH < 0.1:
 		playerdead()
+	var input_dir := Input.get_vector("left", "right", "up", "down")
+	var is_moving = input_dir.length() > 0.1
+	if Input.is_action_just_pressed("attack"):
+		dashanim.stop()
+		attackanim.stop()
+		attackanim.play("mixamo_com")
+		attackanim.speed_scale = 5
+	elif is_moving:
+		runanim.play("mixamo_com")
+		runanim.speed_scale = 2
+	else:
+		runanim.stop()
+		idleanim.play("mixamo_com")
 
 func playerdead():
 	get_tree().paused = false
@@ -124,6 +142,9 @@ func attack():
 	add_child(vfx)
 	
 func dodge():
+	dashanim.stop()
+	dashanim.play("mixamo_com")
+	dashanim.speed_scale = 2.3
 	expected_roll = false
 	Invincibility = 0.3
 	roll_countdown = 0.5
